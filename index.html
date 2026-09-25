@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive Data Structures A-to-Z roadmap tracker with progress saving, search and practice problems.">
+  <title>DSA Roadmap Tracker — Data Structures A to Z</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="top-row">
+      <div class="logo">
+        <span class="bolt">⚡</span> DSA Roadmap <span class="bolt">A → Z</span>
+        <small>Click any topic to see exactly what to learn inside</small>
+      </div>
+      <div class="header-buttons">
+        <button id="themeBtn" title="Toggle light / dark mode">🌗</button>
+        <button id="exportBtn" title="Download your progress as a backup file">⬇ Backup</button>
+        <button id="importBtn" title="Restore progress from a backup file">⬆ Restore</button>
+        <button id="resetBtn" title="Reset all progress">↺ Reset</button>
+        <input type="file" id="importFile" accept=".json" hidden>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-value" id="statPct">0%</span>
+        <span class="stat-label">Overall</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="statTopics">0/0</span>
+        <span class="stat-label">Topics done</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="statSubs">0/0</span>
+        <span class="stat-label">Checkpoints</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="statStreak">🔥 1</span>
+        <span class="stat-label">Day streak</span>
+      </div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span id="progressText">0 of 0 checkpoints completed</span>
+        <span id="progressPct">0%</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+
+    <div class="controls">
+      <div class="search-box">
+        <span>🔍</span>
+        <input type="text" id="searchInput" placeholder="Search topics, e.g. 'sliding window', 'dijkstra', 'recursion'...">
+        <button id="clearSearch" hidden>✕</button>
+      </div>
+      <div class="filter-chips" id="filterChips">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="todo">Not started</button>
+        <button class="chip" data-filter="active">In progress</button>
+        <button class="chip" data-filter="done">Completed ✓</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="roadmap"></main>
+
+<div class="streak-note">
+  ✅ Progress saves automatically in your browser — <b>bookmark this page</b> and come back daily.
+</div>
+
+<footer>
+  Built for DSA learners · Progress is stored locally in your browser ·
+  <button class="link-btn" onclick="window.print()">🖨 Print / Save as PDF</button>
+</footer>
+
+<button id="scrollTop" title="Back to top" hidden>↑</button>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay">
+  <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
