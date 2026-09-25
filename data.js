@@ -1,64 +1,80 @@
 // ============================================================
-//  ROADMAP DATA — edit this file to add / change / reorder topics
-//  Each topic: id (unique), icon, name, time estimate, why,
-//  learn: [ [title, detail], ... ], practice: [ [problem, difficulty], ... ]
+// DSA ROADMAP DATA
+// Edit this file to add, remove, or reorder roadmap topics.
 // ============================================================
+
 const ROADMAP_DATA = [
   {
-    phase: "Phase 1", title: "Foundations", time: "Week 1",
+    phase: "Phase 1",
+    title: "Foundations",
+    time: "Week 1",
     topics: [
       {
-        id: "bigo", icon: "⏱️", name: "Big-O Notation", time: "2–3 days",
-        why: "Big-O is the language used to compare every data structure and algorithm. Learn it first — you can't judge if your solution is good without it.",
+        id: "bigo",
+        icon: "⏱️",
+        name: "Big-O Notation",
+        time: "2–3 days",
+        why: "Big-O is the language used to compare every data structure and algorithm. Learn it first because you cannot judge whether your solution is efficient without understanding its time and space complexity.",
         learn: [
-          ["What time complexity means", "Counting operations, not seconds"],
-          ["O(1), O(log n), O(n), O(n log n), O(n²), O(2ⁿ)", "Know the growth order from fastest to slowest"],
-          ["Space complexity", "Extra memory your algorithm uses"],
-          ["Best, worst and average case", "e.g. quicksort's O(n²) worst case vs O(n log n) average"],
-          ["Analysing loops and nested loops", "A loop inside a loop usually means O(n²)"],
-          ["Analysing recursive calls", "Count the branches × depth of the recursion tree"]
+          ["What time complexity means", "Count operations instead of measuring seconds."],
+          ["O(1), O(log n), O(n), O(n log n), O(n²), O(2ⁿ)", "Know the growth order from fastest to slowest."],
+          ["Space complexity", "Understand the extra memory an algorithm uses."],
+          ["Best, worst and average case", "For example: quicksort can be O(n²) in the worst case and O(n log n) on average."],
+          ["Analysing loops and nested loops", "A loop inside a loop commonly leads to O(n²)."],
+          ["Analysing recursive calls", "Use a recursion tree to count branches and depth."]
         ],
-        practice: [["Analyse complexity of 10 short code snippets", "Easy"]],
-        tip: "Don't obsess over formal proofs. Being able to look at code and say 'this is O(n²)' is enough to move on."
+        practice: [
+          ["Analyse complexity of 10 short code snippets", "Easy"]
+        ],
+        tip: "Do not spend too long on formal proofs. You should be able to read code and identify whether it is O(n), O(n²), or O(log n)."
       },
       {
-        id: "arrays", icon: "📦", name: "Arrays & Strings", time: "3–4 days",
-        why: "Arrays are the substrate almost every other structure is built on. Most interview problems start here.",
+        id: "arrays",
+        icon: "📦",
+        name: "Arrays & Strings",
+        time: "3–4 days",
+        why: "Arrays and strings are the foundation of DSA. Most beginner and interview questions begin with these structures and their common patterns.",
         learn: [
-          ["Array indexing, insertion, deletion", "And their O(n) costs"],
-          ["Dynamic arrays (Python list, C++ vector)", "How resizing / amortised O(1) append works"],
-          ["2D arrays / matrices", "Row-major traversal, transpose"],
-          ["String immutability and slicing", "Language-specific quirks"],
-          ["Two pointers technique", "Pair sums, palindrome checks, container with water"],
-          ["Sliding window technique", "Fixed and variable-size windows for substring problems"],
-          ["Prefix sums", "Range sum queries in O(1) after O(n) preprocessing"],
-          ["Kadane's algorithm", "Maximum subarray sum in O(n)"]
+          ["Array indexing, insertion and deletion", "Understand the O(1) access cost and O(n) insertion or deletion cost."],
+          ["Dynamic arrays", "Learn how Python lists, Java ArrayLists, and C++ vectors resize."],
+          ["2D arrays and matrices", "Practice row-wise, column-wise, diagonal traversal, and transpose."],
+          ["String immutability and slicing", "Understand how strings behave in your programming language."],
+          ["Two pointers technique", "Use left/right pointers for pairs, palindromes, and container problems."],
+          ["Sliding window technique", "Use fixed or variable windows for substring and subarray problems."],
+          ["Prefix sums", "Answer range sum queries quickly after preprocessing."],
+          ["Kadane's algorithm", "Find the maximum subarray sum in O(n)."]
         ],
         practice: [
           ["Two Sum", "Easy"],
-          ["Best Time to Buy & Sell Stock", "Easy"],
+          ["Best Time to Buy and Sell Stock", "Easy"],
           ["Contains Duplicate", "Easy"],
           ["Longest Substring Without Repeating Characters", "Medium"],
-          ["Maximum Subarray (Kadane's)", "Medium"],
+          ["Maximum Subarray - Kadane's Algorithm", "Medium"],
           ["Product of Array Except Self", "Medium"]
         ],
-        tip: "Sliding window is the #1 pattern in interviews. Do 5–6 sliding window problems until you can spot when to use it instantly."
+        tip: "Learn sliding window deeply. It is one of the most useful DSA patterns for arrays and strings."
       }
     ]
   },
+
   {
-    phase: "Phase 2", title: "Linear Structures", time: "Weeks 2–3",
+    phase: "Phase 2",
+    title: "Linear Structures",
+    time: "Weeks 2–3",
     topics: [
       {
-        id: "hash", icon: "🗂️", name: "Hash Tables", time: "2–3 days",
-        why: "Highest payoff per hour of study. O(1) average lookup unlocks an enormous number of problems.",
+        id: "hash",
+        icon: "🗂️",
+        name: "Hash Tables",
+        time: "2–3 days",
+        why: "Hash tables give O(1) average lookup and are one of the highest-value topics in DSA. They are ideal for counting, duplicates, grouping, and fast membership checking.",
         learn: [
-          ["Hash function basics", "How a key becomes an index"],
-          ["Handling collisions", "Chaining vs open addressing"],
-          ["Hash map vs hash set", "Map stores key→value, set stores unique keys"],
-          ["Load factor and resizing", "Why average case is O(1) but worst is O(n)"],
-          ["Frequency counting pattern", "Solve anagram / duplicate problems with one pass"],
-          ["Grouping with maps", "Group anagrams, group items by a computed key"]
+          ["Hash function basics", "Understand how a key becomes an array index."],
+          ["Handling collisions", "Learn chaining and open addressing concepts."],
+          ["Hash map versus hash set", "Maps store key-value pairs; sets store unique values."],
+          ["Load factor and resizing", "Understand why average lookup is O(1)."],
+          ["Frequency counting pattern", "Count characters, numbers, and occurrences efficiently."],
+          ["Grouping with maps", "Group values by a computed key, such as anagrams."]
         ],
         practice: [
           ["Valid Anagram", "Easy"],
@@ -66,106 +82,124 @@ const ROADMAP_DATA = [
           ["Top K Frequent Elements", "Medium"],
           ["Longest Consecutive Sequence", "Medium"]
         ],
-        tip: "When you see 'find duplicates', 'count occurrences' or 'check membership fast' — a hash map is almost always the answer."
+        tip: "If a question says duplicates, frequency, count, membership, or lookup, consider using a hash map or hash set."
       },
       {
-        id: "linkedlist", icon: "🔗", name: "Linked Lists", time: "3–4 days",
-        why: "Teaches you pointer manipulation. Many companies still ask linked list problems to test this exact skill.",
+        id: "linkedlist",
+        icon: "🔗",
+        name: "Linked Lists",
+        time: "3–4 days",
+        why: "Linked lists teach pointer manipulation. They are important for university exams and interviews because they test whether you can safely change references between nodes.",
         learn: [
-          ["Singly linked list from scratch", "Build Node + insert + delete + search yourself"],
-          ["Doubly and circular linked lists", "Trade-offs vs singly linked"],
-          ["Reversing a linked list", "Iterative AND recursive — classic interview question"],
-          ["Fast & slow pointers", "Cycle detection (Floyd's algorithm), finding the middle"],
-          ["Merging two sorted lists", "Foundation for merge sort later"],
-          ["Finding the k-th node from the end", "Two pointers with a gap of k"],
-          ["Array vs linked list comparison", "When to use which and why"]
+          ["Singly linked list from scratch", "Create Node, insert, delete, search, and display methods."],
+          ["Doubly and circular linked lists", "Understand trade-offs compared with singly linked lists."],
+          ["Reversing a linked list", "Learn both iterative and recursive reversal."],
+          ["Fast and slow pointers", "Use Floyd's algorithm for cycle detection and middle-node problems."],
+          ["Merging two sorted lists", "A key pattern used again in merge sort."],
+          ["Find the k-th node from the end", "Use two pointers separated by k nodes."],
+          ["Array versus linked list", "Know when one structure is better than the other."]
         ],
         practice: [
           ["Reverse Linked List", "Easy"],
           ["Merge Two Sorted Lists", "Easy"],
           ["Linked List Cycle", "Easy"],
-          ["Middle of Linked List", "Easy"],
-          ["Remove Nth Node From End", "Medium"],
+          ["Middle of the Linked List", "Easy"],
+          ["Remove Nth Node From End of List", "Medium"],
           ["Reorder List", "Medium"]
         ],
-        tip: "Always draw the nodes and arrows on paper before coding pointer manipulation. Visual first, code second."
+        tip: "Draw every node and arrow on paper before writing pointer-changing code."
       },
       {
-        id: "stack", icon: "🥞", name: "Stacks", time: "1–2 days",
-        why: "LIFO structure behind recursion, undo, parsing and expression evaluation — directly useful for expression-conversion academic work.",
+        id: "stack",
+        icon: "🥞",
+        name: "Stacks",
+        time: "1–2 days",
+        why: "Stacks use LIFO order and are used in recursion, undo actions, expression evaluation, parsing, and balanced-bracket checking.",
         learn: [
-          ["Stack operations and implementation", "push, pop, peek — via array and linked list"],
-          ["Balanced parentheses matching", "The classic first stack problem"],
-          ["Infix → postfix/prefix conversion", "Directly useful for academics"],
-          ["Postfix expression evaluation", "Stack-based evaluation"],
-          ["Monotonic stack", "Next greater element, daily temperatures"],
-          ["Min stack / stack with extra state", "Design problems"],
-          ["Call stack connection", "How function calls use a stack — leads into recursion"]
+          ["Stack operations and implementation", "Learn push, pop, peek, isEmpty using arrays and linked lists."],
+          ["Balanced parentheses matching", "The classic first stack problem."],
+          ["Infix to postfix and prefix conversion", "Useful for academic expression conversion problems."],
+          ["Postfix expression evaluation", "Evaluate expressions using a stack."],
+          ["Monotonic stack", "Use for next greater element and daily temperatures."],
+          ["Min stack", "Store extra state to return the minimum quickly."],
+          ["Call stack connection", "Understand how function calls connect to recursion."]
         ],
         practice: [
           ["Valid Parentheses", "Easy"],
-          ["Implement Queue using Stacks", "Easy"],
+          ["Implement Queue Using Stacks", "Easy"],
           ["Min Stack", "Medium"],
           ["Daily Temperatures", "Medium"],
           ["Next Greater Element", "Medium"]
         ],
-        tip: "Monotonic stack problems look impossible until you learn the pattern once — then they all feel the same."
+        tip: "For monotonic stack questions, learn the next-greater-element pattern once and reuse it."
       },
       {
-        id: "queue", icon: "🚶", name: "Queues & Deques", time: "1–2 days",
-        why: "FIFO structure behind BFS, scheduling and buffering. You'll need it immediately when you reach graphs.",
+        id: "queue",
+        icon: "🚶",
+        name: "Queues & Deques",
+        time: "1–2 days",
+        why: "Queues use FIFO order and are essential for scheduling, buffering, breadth-first search, and level-order tree traversal.",
         learn: [
-          ["Queue operations and implementation", "enqueue, dequeue — circular array implementation"],
-          ["Deque (double-ended queue)", "Both ends can push/pop"],
-          ["Circular queue", "Design problem favourite"],
-          ["Queue using two stacks", "Amortised analysis"],
-          ["Priority queue intro", "Leads into heaps in Phase 4"]
+          ["Queue operations and implementation", "Learn enqueue, dequeue, front, rear, and isEmpty."],
+          ["Circular queue", "Understand how freed spaces are reused."],
+          ["Deque", "A double-ended queue can insert and remove from both ends."],
+          ["Queue using two stacks", "Learn the amortised O(1) approach."],
+          ["Priority queue introduction", "This prepares you for heaps later."]
         ],
         practice: [
+          ["Number of Recent Calls", "Easy"],
           ["Implement Circular Queue", "Medium"],
-          ["Design Deque", "Medium"],
-          ["Number of Recent Calls", "Easy"]
+          ["Design Deque", "Medium"]
         ],
-        tip: "Understand WHY circular queues reuse freed slots — it's a common viva/interview explanation question."
+        tip: "Queues are vital before graphs because BFS uses a queue."
       }
     ]
   },
+
   {
-    phase: "Phase 3", title: "Recursion & Backtracking", time: "Weeks 4–5 ⚠️",
+    phase: "Phase 3",
+    title: "Recursion & Backtracking",
+    time: "Weeks 4–5",
     topics: [
       {
-        id: "recursion", icon: "🔄", name: "Recursion", time: "4–5 days",
-        why: "THE critical checkpoint. Trees, graphs and dynamic programming all depend on recursion. Do not rush this.",
+        id: "recursion",
+        icon: "🔄",
+        name: "Recursion",
+        time: "4–5 days",
+        why: "Recursion is a critical DSA checkpoint. Trees, divide and conquer, backtracking, graphs, and dynamic programming all depend on it.",
         learn: [
-          ["Base case and recursive case", "Every recursion needs a stopping condition"],
-          ["The call stack", "Visualise how frames stack up and return"],
-          ["Recursion tree", "Draw it for every recursive function"],
-          ["Recursion on arrays/strings", "Subsets, sum problems, check sorted"],
-          ["Head vs tail recursion", "And why tail recursion can be optimised"],
-          ["Recursion vs iteration", "Converting between them"],
-          ["Divide and conquer", "Split problem in half — foundation for merge sort"],
-          ["Memoisation intro", "Cache repeated calls — the bridge to DP"]
+          ["Base case and recursive case", "Every recursive function needs a stopping condition."],
+          ["The call stack", "Visualise recursive function calls stacking and returning."],
+          ["Recursion tree", "Draw it to understand repeated subproblems and complexity."],
+          ["Recursion on arrays and strings", "Practice checking sorted arrays, subsets, and sums."],
+          ["Head and tail recursion", "Understand where the recursive call happens."],
+          ["Recursion versus iteration", "Learn how to convert between recursive and iterative solutions."],
+          ["Divide and conquer", "Break a problem into smaller halves, then combine results."],
+          ["Memoisation introduction", "Save repeated function calls as preparation for DP."]
         ],
         practice: [
-          ["Fibonacci (recursive, then memoised)", "Easy"],
-          ["Power of a number (fast exponentiation)", "Medium"],
-          ["Subsets of an array", "Medium"],
+          ["Fibonacci - recursive then memoised", "Easy"],
+          ["Power of a Number - fast exponentiation", "Medium"],
+          ["Subsets of an Array", "Medium"],
           ["Tower of Hanoi", "Medium"],
-          ["Generate all permutations", "Medium"]
+          ["Generate All Permutations", "Medium"]
         ],
-        tip: "Rule of thumb: if you can't draw the recursion tree on paper, you can't code it. Draw first, code second, always."
+        tip: "If you cannot draw the recursion tree, do not code yet. Draw the calls, base cases, and returns first."
       },
       {
-        id: "backtrack", icon: "🧭", name: "Backtracking", time: "3–4 days",
-        why: "Backtracking is recursion + undo. It powers constraint problems and is the pattern behind many classic interview questions.",
+        id: "backtrack",
+        icon: "🧭",
+        name: "Backtracking",
+        time: "3–4 days",
+        why: "Backtracking is recursion with choices and undo operations. It is used for subsets, permutations, N-Queens, Sudoku, and path-search problems.",
         learn: [
-          ["Choose → explore → un-choose pattern", "The universal backtracking template"],
-          ["Subsets & power set generation", "Include/exclude each element"],
-          ["Permutations", "Order matters version of subsets"],
-          ["Combination sums", "With and without repetition allowed"],
-          ["N-Queens problem", "The classic constraint backtracker"],
-          ["Sudoku solver concept", "Grid-based backtracking"],
-          ["Pruning strategies", "Cut branches early to avoid exponential blowup"]
+          ["Choose, explore, un-choose", "The main backtracking template."],
+          ["Subsets and power set generation", "Include or exclude each element."],
+          ["Permutations", "Generate every possible ordering."],
+          ["Combination sum", "Build valid target combinations."],
+          ["N-Queens", "The classic backtracking constraint problem."],
+          ["Sudoku solver concept", "Apply backtracking in a grid."],
+          ["Pruning strategies", "Stop exploring invalid branches early."]
         ],
         practice: [
           ["Subsets", "Medium"],
@@ -174,171 +208,204 @@ const ROADMAP_DATA = [
           ["Word Search", "Medium"],
           ["N-Queens", "Hard"]
         ],
-        tip: "Memorise the template: base case → for each choice → make choice → recurse → UNDO choice. Every backtracking problem fits it."
+        tip: "Remember the template: base case → choose → recurse → undo choice."
       }
     ]
   },
+
   {
-    phase: "Phase 4", title: "Trees & Hierarchies", time: "Weeks 6–8",
+    phase: "Phase 4",
+    title: "Trees & Hierarchies",
+    time: "Weeks 6–8",
     topics: [
       {
-        id: "bitree", icon: "🌳", name: "Binary Trees", time: "4–5 days",
-        why: "The most-asked data structure category in interviews. Every concept here reuses your recursion skills.",
+        id: "bitree",
+        icon: "🌳",
+        name: "Binary Trees",
+        time: "4–5 days",
+        why: "Binary trees are among the most frequently asked interview topics. They use recursion heavily and help you learn hierarchical data processing.",
         learn: [
-          ["Tree terminology", "Root, leaf, height, depth, subtree, balanced"],
-          ["The 4 traversals", "Inorder, preorder, postorder (recursive + iterative) and level-order (BFS with a queue)"],
-          ["Height / depth / diameter", "Bottom-up recursion pattern"],
-          ["Balanced tree check", "Returning height and validity together"],
-          ["Invert / mirror a tree", "Warm-up recursion on trees"],
-          ["Lowest Common Ancestor", "Both the general and BST versions"],
-          ["Path sum problems", "Root-to-leaf, any path, maximum path sum"],
-          ["Serialize / deserialize", "Rebuild a tree from traversal output"]
+          ["Tree terminology", "Root, parent, child, leaf, height, depth, subtree, balanced tree."],
+          ["Tree traversals", "Preorder, inorder, postorder, and level-order traversal."],
+          ["Recursive and iterative traversals", "Use recursion and stack-based methods."],
+          ["Height, depth and diameter", "Use bottom-up recursive thinking."],
+          ["Balanced tree check", "Return height and validity together."],
+          ["Invert or mirror tree", "A simple but important recursive tree problem."],
+          ["Lowest Common Ancestor", "Solve LCA for normal binary trees and BSTs."],
+          ["Path sum problems", "Root-to-leaf paths, target sums, and maximum path sums."]
         ],
         practice: [
           ["Invert Binary Tree", "Easy"],
           ["Maximum Depth of Binary Tree", "Easy"],
           ["Same Tree", "Easy"],
-          ["Level Order Traversal", "Medium"],
+          ["Binary Tree Level Order Traversal", "Medium"],
           ["Validate Binary Search Tree", "Medium"],
           ["Diameter of Binary Tree", "Medium"],
           ["Lowest Common Ancestor", "Medium"],
           ["Binary Tree Maximum Path Sum", "Hard"]
         ],
-        tip: "Most tree problems = 'do something to left subtree, do something to right subtree, combine'. Learn to see problems this way."
+        tip: "Most tree solutions are: solve left subtree, solve right subtree, then combine the results."
       },
       {
-        id: "bst", icon: "🌲", name: "Binary Search Trees", time: "2–3 days",
-        why: "BSTs give O(log n) search — the bridge between simple arrays and advanced balanced trees.",
+        id: "bst",
+        icon: "🌲",
+        name: "Binary Search Trees",
+        time: "2–3 days",
+        why: "BSTs store ordered data and offer average O(log n) search, insertion, and deletion when balanced.",
         learn: [
-          ["BST property", "Left < node < right, for EVERY subtree"],
-          ["Insert / delete / search", "Delete with 0, 1 and 2 children is the tricky part"],
-          ["Inorder traversal = sorted order", "Very common viva/exam point"],
-          ["Building a BST from sorted array", "Pick middle element as root"],
-          ["BST vs hash map", "When ordered data matters, BST wins"],
-          ["Why unbalanced = O(n)", "Motivation for AVL/Red-Black trees (know the concept)"]
+          ["BST property", "Every left subtree value is smaller and every right subtree value is larger."],
+          ["Search, insert and delete", "Practice all three operations."],
+          ["Delete cases", "Delete nodes with zero, one, and two children."],
+          ["Inorder traversal", "Inorder traversal of a BST returns sorted values."],
+          ["Build BST from sorted array", "Choose the middle item as the root."],
+          ["BST versus hash map", "Use BST when sorted order matters."],
+          ["Balanced BST concept", "Know why AVL and Red-Black trees avoid O(n) worst-case behavior."]
         ],
         practice: [
-          ["Search in a BST", "Easy"],
-          ["Insert into a BST", "Medium"],
+          ["Search in a Binary Search Tree", "Easy"],
+          ["Insert into a Binary Search Tree", "Medium"],
           ["Delete Node in a BST", "Medium"],
-          ["Kth Smallest in BST", "Medium"]
+          ["Kth Smallest Element in a BST", "Medium"]
         ],
-        tip: "Deleting a node with two children: replace with inorder successor (smallest in right subtree). Favourite exam question."
+        tip: "For deleting a node with two children, replace it with the inorder successor: the smallest node in the right subtree."
       },
       {
-        id: "heap", icon: "⛰️", name: "Heaps & Priority Queues", time: "2 days",
-        why: "Small topic, huge payoff. Top-K, scheduling and Dijkstra all depend on heaps.",
+        id: "heap",
+        icon: "⛰️",
+        name: "Heaps & Priority Queues",
+        time: "2 days",
+        why: "Heaps are powerful for Top-K questions, scheduling, streaming medians, and Dijkstra's shortest path algorithm.",
         learn: [
-          ["Min-heap vs max-heap", "Complete binary tree stored in an array"],
-          ["Insert and extract-min (sift up/down)", "Both O(log n)"],
-          ["Building a heap from an array", "O(n) — faster than n inserts"],
-          ["Array index formulas", "Parent = (i−1)/2, children = 2i+1, 2i+2"],
-          ["Heap sort concept", "O(n log n), in-place"],
-          ["Top-K pattern", "Keep a heap of size k — 'kth largest element' problems"],
-          ["Two heaps pattern", "Median of a data stream"]
+          ["Min-heap and max-heap", "A heap is a complete binary tree usually stored in an array."],
+          ["Heap insertion and extraction", "Use sift-up and sift-down in O(log n)."],
+          ["Build heap from array", "Understand why heap construction can be O(n)."],
+          ["Array index formulas", "Parent: (i - 1) / 2; children: 2i + 1 and 2i + 2."],
+          ["Heap sort concept", "Sort using a heap in O(n log n)."],
+          ["Top-K pattern", "Maintain a heap of size k."],
+          ["Two heaps pattern", "Use a max-heap and min-heap to find streaming median."]
         ],
         practice: [
-          ["Kth Largest Element in Array", "Medium"],
+          ["Kth Largest Element in an Array", "Medium"],
           ["K Closest Points to Origin", "Medium"],
-          ["Top K Frequent Elements (heap version)", "Medium"],
+          ["Top K Frequent Elements", "Medium"],
           ["Find Median from Data Stream", "Hard"]
         ],
-        tip: "For 'k largest' use a MIN-heap of size k (not a max-heap) — the counter-intuitive part everyone gets wrong at first."
+        tip: "For k largest elements, keep a min-heap of size k. The smallest among the top k stays at the root."
       },
       {
-        id: "trie", icon: "🔤", name: "Tries (Prefix Trees)", time: "2 days",
-        why: "The go-to structure for autocomplete, spellcheck and prefix-matching problems.",
+        id: "trie",
+        icon: "🔤",
+        name: "Tries (Prefix Trees)",
+        time: "2 days",
+        why: "Tries are designed for prefix searching. They power autocomplete, dictionary, and word-search features.",
         learn: [
-          ["Trie node structure", "Children map/array + is_end flag"],
-          ["Insert / search / startsWith", "The three core operations"],
-          ["Prefix search & autocomplete", "Walk the trie, then collect subtree words"],
-          ["Word search with wildcard", "'.' matching like regex"],
-          ["When to use a trie vs hash set", "Prefix queries are the giveaway"]
+          ["Trie node structure", "Each node stores children and an end-of-word flag."],
+          ["Insert", "Add a word character by character."],
+          ["Search", "Check whether a complete word exists."],
+          ["StartsWith", "Check whether a prefix exists."],
+          ["Autocomplete concept", "Find all words below a prefix node."],
+          ["Trie versus hash set", "Use tries when prefix queries matter."]
         ],
         practice: [
           ["Implement Trie", "Medium"],
-          ["Design Add and Search Words", "Medium"],
+          ["Design Add and Search Words Data Structure", "Medium"],
           ["Word Search II", "Hard"]
         ],
-        tip: "A trie looks scary but is just a tree of characters. Implement it once by hand and it becomes one of your easiest tools."
+        tip: "A trie is simply a tree where each edge represents a character."
       }
     ]
   },
+
   {
-    phase: "Phase 5", title: "Graphs, Sorting & Search", time: "Weeks 9–11",
+    phase: "Phase 5",
+    title: "Graphs, Sorting & Search",
+    time: "Weeks 9–11",
     topics: [
       {
-        id: "graphbasics", icon: "🕸️", name: "Graph Basics & Traversal", time: "4–5 days",
-        why: "BFS and DFS are the two engines behind nearly every graph problem — and they need your recursion and queue skills first.",
+        id: "graphbasics",
+        icon: "🕸️",
+        name: "Graph Basics & Traversal",
+        time: "4–5 days",
+        why: "Graphs model connections such as maps, networks, dependencies, and social relationships. BFS and DFS are essential graph traversal methods.",
         learn: [
-          ["Graph representations", "Adjacency list (use this) vs adjacency matrix vs edge list"],
-          ["Directed vs undirected, weighted vs unweighted", "And cyclic vs acyclic"],
-          ["BFS (breadth-first search)", "Queue-based, gives shortest path in unweighted graphs"],
-          ["DFS (depth-first search)", "Recursive and iterative (stack) versions"],
-          ["Connected components", "Run DFS/BFS from every unvisited node"],
-          ["Grids as graphs", "Treat each cell as a node, neighbours = 4 directions"],
-          ["Number of islands pattern", "The classic grid-DFS problem"],
-          ["Cycle detection", "DFS with visited states in directed graphs"]
+          ["Graph representations", "Learn adjacency list, adjacency matrix, and edge list."],
+          ["Graph types", "Directed, undirected, weighted, unweighted, cyclic, and acyclic."],
+          ["Breadth-First Search", "Use a queue; it finds shortest paths in unweighted graphs."],
+          ["Depth-First Search", "Use recursion or an explicit stack."],
+          ["Connected components", "Run BFS or DFS from each unvisited node."],
+          ["Grids as graphs", "Treat each cell as a node with four possible directions."],
+          ["Number of islands pattern", "A classic grid DFS or BFS problem."],
+          ["Cycle detection", "Use visited states for directed graph cycles."]
         ],
         practice: [
-          ["Number of Islands", "Medium"],
           ["Flood Fill", "Easy"],
+          ["Number of Islands", "Medium"],
           ["Max Area of Island", "Medium"],
           ["Clone Graph", "Medium"],
-          ["Course Schedule (cycle detection)", "Medium"]
+          ["Course Schedule", "Medium"]
         ],
-        tip: "Grid problems = graph problems in disguise. Once you learn the 4-direction neighbour loop, half of graph practice becomes routine."
+        tip: "Most grid questions are graph questions in disguise. Learn the four-direction loop well."
       },
       {
-        id: "graphadv", icon: "🛰️", name: "Advanced Graphs", time: "3–4 days",
-        why: "Shortest paths, dependency ordering and connectivity — the problems that separate intermediate from advanced.",
+        id: "graphadv",
+        icon: "🛰️",
+        name: "Advanced Graphs",
+        time: "3–4 days",
+        why: "Advanced graph algorithms solve shortest paths, ordering dependencies, connectivity, and minimum-cost connection problems.",
         learn: [
-          ["Topological sort (Kahn's algorithm)", "Ordering with dependencies; prerequisite problems"],
-          ["Dijkstra's algorithm", "Shortest path with non-negative weights, using a priority queue"],
-          ["Union-Find (Disjoint Set Union)", "Find + union with path compression and union by rank"],
-          ["Detecting cycles with Union-Find", "Undirected graphs"],
-          ["Number of connected components", "Both via DFS and via Union-Find"],
-          ["Bellman-Ford concept", "Handles negative weights — know the idea"],
-          ["Minimum Spanning Tree (Kruskal/Prim)", "Concept + how Union-Find powers Kruskal"]
+          ["Topological sort", "Order tasks with dependencies using Kahn's algorithm or DFS."],
+          ["Dijkstra's algorithm", "Find shortest paths with non-negative edge weights."],
+          ["Union-Find or Disjoint Set Union", "Track connected components efficiently."],
+          ["Path compression and union by rank", "Optimise Union-Find operations."],
+          ["Cycle detection with Union-Find", "Useful for undirected graphs."],
+          ["Bellman-Ford concept", "Know it handles negative weights."],
+          ["Minimum Spanning Tree", "Understand Kruskal and Prim concepts."]
         ],
         practice: [
-          ["Course Schedule II (topological sort)", "Medium"],
-          ["Network Delay Time (Dijkstra)", "Medium"],
-          ["Number of Provinces (union-find)", "Medium"],
+          ["Course Schedule II", "Medium"],
+          ["Network Delay Time", "Medium"],
+          ["Number of Provinces", "Medium"],
           ["Redundant Connection", "Medium"]
         ],
-        tip: "Union-Find looks like magic the first time. Code it once with path compression and you'll reuse it in dozens of problems."
+        tip: "Master Union-Find once. It appears in many connection and grouping problems."
       },
       {
-        id: "sorting", icon: "📊", name: "Sorting Algorithms", time: "3–4 days",
-        why: "Merge sort and quicksort specifically cement divide-and-conquer recursion — and sorting questions are standard in exams and interviews.",
+        id: "sorting",
+        icon: "📊",
+        name: "Sorting Algorithms",
+        time: "3–4 days",
+        why: "Sorting is fundamental for exams, interviews, and efficient algorithm design. Merge sort and quicksort also strengthen divide-and-conquer recursion.",
         learn: [
-          ["Bubble, selection, insertion sort", "O(n²) basics — insertion sort is the one to actually remember"],
-          ["Merge sort", "Divide, sort halves, merge. Stable, O(n log n) always"],
-          ["Quicksort", "Partition around a pivot. O(n log n) average, O(n²) worst"],
-          ["Partitioning (Lomuto / Hoare)", "The heart of quicksort, also used in quickselect"],
-          ["Heap sort", "Build heap + repeatedly extract max"],
-          ["Counting & bucket sort", "O(n) when data range is limited — non-comparison sorts"],
-          ["Stability of sorts", "Which sorts preserve order of equal keys"],
-          ["Comparison table", "Time + space complexity of every sort"]
+          ["Bubble, selection and insertion sort", "Understand the basic O(n²) sorting algorithms."],
+          ["Merge sort", "Divide, sort halves, and merge; always O(n log n)."],
+          ["Quicksort", "Partition around a pivot; O(n log n) average."],
+          ["Partition schemes", "Learn Lomuto and Hoare partition concepts."],
+          ["Heap sort", "Build a heap and extract values repeatedly."],
+          ["Counting and bucket sort", "Use when value ranges are limited."],
+          ["Stable sorting", "Know which algorithms preserve the order of equal values."],
+          ["Sorting complexity comparison", "Compare time, space, stability, and best/worst cases."]
         ],
         practice: [
-          ["Implement merge sort from scratch", "Medium"],
-          ["Implement quicksort + partition", "Medium"],
-          ["Sort Colors (Dutch national flag)", "Medium"],
-          ["Kth Largest (quickselect)", "Medium"]
+          ["Implement Merge Sort", "Medium"],
+          ["Implement Quick Sort", "Medium"],
+          ["Sort Colors", "Medium"],
+          ["Kth Largest Element using Quickselect", "Medium"]
         ],
-        tip: "Be able to write merge sort and quicksort from memory on paper — a very common university lab exam and interview task."
+        tip: "Be able to write merge sort and quicksort from memory for university labs and interviews."
       },
       {
-        id: "binsearch", icon: "🎯", name: "Binary Search", time: "2 days",
-        why: "O(log n) search on anything monotonic — including answers, not just sorted arrays.",
+        id: "binsearch",
+        icon: "🎯",
+        name: "Binary Search",
+        time: "2 days",
+        why: "Binary search solves sorted or monotonic problems in O(log n). It is much more than just searching in a sorted array.",
         learn: [
-          ["Classic binary search", "Loop and recursive versions, and off-by-one pitfalls"],
-          ["Search in rotated sorted array", "The famous follow-up"],
-          ["First and last occurrence", "Left-most / right-most binary search"],
-          ["Binary search on the ANSWER", "'Minimum capacity to ship in D days' style problems"],
-          ["Search in 2D matrix", "Treating a matrix as one sorted array"]
+          ["Classic binary search", "Use low, high, and mid safely."],
+          ["Boundary conditions", "Avoid off-by-one errors."],
+          ["First and last occurrence", "Find lower and upper bounds."],
+          ["Rotated sorted array", "Identify the sorted half in each iteration."],
+          ["Binary search on the answer", "Use when the answer has a monotonic true/false condition."],
+          ["Binary search in 2D matrix", "Treat some matrices as a sorted 1D array."]
         ],
         practice: [
           ["Binary Search", "Easy"],
@@ -346,25 +413,31 @@ const ROADMAP_DATA = [
           ["Search in Rotated Sorted Array", "Medium"],
           ["Koko Eating Bananas", "Medium"]
         ],
-        tip: "Binary search bugs live in the boundary conditions. Memorise one clean template (while lo < hi style) and use it everywhere."
+        tip: "Memorise one clean binary-search template and carefully define what low, high, and mid represent."
       }
     ]
   },
+
   {
-    phase: "Phase 6", title: "Dynamic Programming", time: "Weeks 12–14 🔥",
+    phase: "Phase 6",
+    title: "Dynamic Programming",
+    time: "Weeks 12–14",
     topics: [
       {
-        id: "dp1", icon: "🧩", name: "DP Fundamentals", time: "4–5 days",
-        why: "The hardest topic in DSA — recursion plus memoisation. Expect it to feel slow; that's normal.",
+        id: "dp1",
+        icon: "🧩",
+        name: "DP Fundamentals",
+        time: "4–5 days",
+        why: "Dynamic programming solves problems with overlapping subproblems and optimal substructure. It is one of the most challenging but valuable DSA topics.",
         learn: [
-          ["Overlapping subproblems", "What makes a problem a DP problem"],
-          ["Top-down (memoisation)", "Recursive + cache — the easier way to start"],
-          ["Bottom-up (tabulation)", "Iterative table filling — the faster way"],
-          ["State definition", "'dp[i] = best answer using first i items' — the real skill"],
-          ["Transition / recurrence relation", "How dp[i] relates to earlier states"],
-          ["Space optimisation", "Rolling arrays: O(n) → O(1) space"],
-          ["1D DP classics", "Climbing stairs, house robber, coin change"],
-          ["Fibonacci as first DP example", "The bridge from recursion to DP"]
+          ["Overlapping subproblems", "Identify repeated recursive work."],
+          ["Optimal substructure", "A bigger answer can be built from smaller optimal answers."],
+          ["Top-down memoisation", "Use recursion plus a cache."],
+          ["Bottom-up tabulation", "Build answers iteratively in a table."],
+          ["State definition", "Define what dp[i] or dp[i][j] represents."],
+          ["Transition relation", "Determine how current state uses earlier states."],
+          ["Space optimisation", "Use rolling variables or arrays when possible."],
+          ["1D DP classics", "Practice climbing stairs, house robber, coin change."]
         ],
         practice: [
           ["Climbing Stairs", "Easy"],
@@ -373,19 +446,22 @@ const ROADMAP_DATA = [
           ["Longest Increasing Subsequence", "Medium"],
           ["Word Break", "Medium"]
         ],
-        tip: "Solve every DP problem BOTH ways: first top-down with memoisation (easier to think of), then convert to bottom-up tabulation."
+        tip: "First write the recursive solution. Then memoise it. Finally convert it to bottom-up tabulation."
       },
       {
-        id: "dp2", icon: "🧮", name: "2D & Advanced DP", time: "4–5 days",
-        why: "Grid and string DP covers most remaining interview DP questions, including edit distance — a top-5 classic.",
+        id: "dp2",
+        icon: "🧮",
+        name: "2D & Advanced DP",
+        time: "4–5 days",
+        why: "Two-dimensional DP is important for grids, strings, subsequences, and knapsack-style problems.",
         learn: [
-          ["Grid DP", "Unique paths, minimum path sum — dp[i][j] patterns"],
-          ["Knapsack (0/1)", "The single most important DP pattern"],
-          ["Unbounded knapsack", "Coin change II — items reusable"],
-          ["Longest Common Subsequence (LCS)", "Foundation of string DP"],
-          ["Edit Distance", "LCS's famous cousin"],
-          ["DP on strings", "Palindrome substrings, partitions"],
-          ["DP vs greedy", "When greedy fails and DP is required"]
+          ["Grid DP", "Solve unique paths and minimum path sum."],
+          ["0/1 Knapsack", "Each item can be used at most once."],
+          ["Unbounded Knapsack", "Items can be used multiple times."],
+          ["Longest Common Subsequence", "The foundation of many string DP problems."],
+          ["Edit Distance", "Find minimum insertions, deletions, and replacements."],
+          ["Palindrome DP", "Use DP for substrings and partitions."],
+          ["DP versus greedy", "Know when a local greedy choice is not enough."]
         ],
         practice: [
           ["Unique Paths", "Medium"],
@@ -395,38 +471,48 @@ const ROADMAP_DATA = [
           ["Edit Distance", "Medium"],
           ["Longest Palindromic Substring", "Medium"]
         ],
-        tip: "Knapsack alone has dozens of variations. Once you deeply understand 0/1 knapsack, see how coin change, partition and subset-sum are all knapsack in disguise."
+        tip: "Learn 0/1 knapsack deeply. Many DP questions are variations of it."
       }
     ]
   },
+
   {
-    phase: "Phase 7", title: "Advanced Topics & Mastery", time: "Ongoing",
+    phase: "Phase 7",
+    title: "Advanced Topics & Mastery",
+    time: "Ongoing",
     topics: [
       {
-        id: "advanced", icon: "🏆", name: "Advanced Structures", time: "1–2 weeks",
-        why: "Beyond interview basics — for competitive programming, depth in academics, and standing out.",
+        id: "advanced",
+        icon: "🏆",
+        name: "Advanced Structures",
+        time: "1–2 weeks",
+        why: "These structures are useful for competitive programming, advanced coursework, and understanding how databases and search systems work.",
         learn: [
-          ["Segment trees", "Range queries with updates in O(log n)"],
-          ["Fenwick tree (Binary Indexed Tree)", "Simpler alternative for prefix sums with updates"],
-          ["Sparse table concept", "Immutable range queries"],
-          ["AVL / Red-Black trees (concepts)", "Self-balancing BSTs — rotations conceptually"],
-          ["B-Trees concept", "How databases and file systems store data"]
+          ["Segment trees", "Answer range queries with updates in O(log n)."],
+          ["Fenwick tree or BIT", "Efficient prefix-sum updates and queries."],
+          ["Sparse table concept", "Fast immutable range queries."],
+          ["AVL and Red-Black tree concepts", "Understand self-balancing BSTs and rotations."],
+          ["B-Tree concept", "Understand how databases and file systems store indexed data."]
         ],
         practice: [
-          ["Range Sum Query — Mutable", "Medium"],
-          ["Implement Fenwick tree", "Medium"]
+          ["Range Sum Query - Mutable", "Medium"],
+          ["Implement Fenwick Tree", "Medium"]
         ],
-        tip: "This tier is optional for interviews but very valuable for coursework, competitive programming and understanding databases."
+        tip: "Advanced structures are optional for basic interviews but valuable for competitive programming and deeper computer-science knowledge."
       },
       {
-        id: "greedy", icon: "🤏", name: "Greedy Algorithms", time: "2–3 days",
-        why: "Greedy problems are short to code but the skill is proving to yourself that the greedy choice is safe.",
+        id: "greedy",
+        icon: "🤏",
+        name: "Greedy Algorithms",
+        time: "2–3 days",
+        why: "Greedy algorithms choose the best immediate option. The coding is often short, but proving that the choice is safe is the real challenge.",
         learn: [
-          ["Greedy choice property", "When a local best choice gives a global best answer"],
-          ["Interval scheduling", "Max non-overlapping intervals — sort by end time"],
-          ["Jump game / gas station patterns", "Reachability greedily"],
-          ["Huffman coding concept", "Greedy in data compression"],
-          ["Greedy vs DP decision", "Try greedy first, fall back to DP if the greedy choice can be proven wrong"]
+          ["Greedy choice property", "Understand when local choices produce a global optimum."],
+          ["Interval scheduling", "Select maximum non-overlapping intervals by sorting end times."],
+          ["Jump game pattern", "Track farthest reachable position."],
+          ["Gas station pattern", "Use running fuel balance."],
+          ["Huffman coding concept", "Learn a greedy application in compression."],
+          ["Greedy versus DP", "Use DP when a greedy choice cannot be proven safe."]
         ],
         practice: [
           ["Assign Cookies", "Easy"],
@@ -434,24 +520,27 @@ const ROADMAP_DATA = [
           ["Non-overlapping Intervals", "Medium"],
           ["Gas Station", "Medium"]
         ],
-        tip: "For interval problems, 'sort by end time' solves a shocking number of questions. Try it first every time."
+        tip: "For interval questions, try sorting by end time first."
       },
       {
-        id: "interview", icon: "🎯", name: "Interview & Exam Mode", time: "2–3 weeks",
-        why: "Knowing topics ≠ solving them under pressure. This final phase converts knowledge into performance.",
+        id: "interview",
+        icon: "🎯",
+        name: "Interview & Exam Mode",
+        time: "2–3 weeks",
+        why: "Knowing DSA concepts is not enough. You must practise identifying patterns and solving problems within time limits.",
         learn: [
-          ["Pattern recognition drills", "Given a new problem, name the pattern before solving"],
-          ["Timed solving", "1 easy in 15 min, 1 medium in 30 min"],
-          ["Complexity explanation practice", "State the trade-offs out loud while solving"],
-          ["Company-specific question sets", "Focus on the companies you target"],
-          ["Revision of weak topics", "Re-solve problems you failed, with spacing"],
-          ["Paper coding practice", "For university lab exams — no autocomplete"]
+          ["Pattern recognition", "Name the likely pattern before writing code."],
+          ["Timed practice", "Target one easy problem in 15 minutes and one medium problem in 30 minutes."],
+          ["Complexity explanation", "Explain time and space complexity clearly."],
+          ["Revision of weak topics", "Re-solve problems you previously failed."],
+          ["Mock interviews", "Practise explaining your approach aloud."],
+          ["Paper coding", "Prepare for university practical exams without autocomplete."]
         ],
         practice: [
           ["Solve 50 mixed problems under time pressure", "Medium"],
-          ["2 mock interviews with a friend", "Hard"]
+          ["Complete two mock interviews", "Hard"]
         ],
-        tip: "Re-solve old failed problems from a week later. Retention beats volume — one revisited problem teaches more than three new ones."
+        tip: "Re-solving old failed questions after a week teaches more than only solving new random problems."
       }
     ]
   }
