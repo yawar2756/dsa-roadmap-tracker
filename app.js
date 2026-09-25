@@ -53,7 +53,13 @@ function topicPct(topic) {
 function topicSearchText(t) {
   return (t.name + ' ' + t.why + ' ' + t.learn.map(x => x.join(' ')).join(' ')).toLowerCase();
 }
-const esc = s => s.replace(/&/g, '&').replace(/</g, '<');
+const esc = s => String(s)
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;')
+  .replace(/'/g, '&#039;');
+
 
 // ---------- RENDER ROADMAP ----------
 function render() {
