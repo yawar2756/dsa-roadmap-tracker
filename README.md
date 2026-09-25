@@ -8,6 +8,10 @@ Learn DSA from beginner to advanced level with a structured roadmap, progress tr
 
 [https://dsa-roadmap-tracker.onrender.com/](https://dsa-roadmap-tracker.onrender.com/)
 
+## 💻 Source Code
+
+[View GitHub Repository](https://github.com/yawar2756/dsa-roadmap-tracker)
+
 ## ✨ Features
 
 - Complete DSA roadmap from Big-O notation to Dynamic Programming
@@ -65,10 +69,10 @@ Learn DSA from beginner to advanced level with a structured roadmap, progress tr
 dsa-roadmap-tracker/
 │
 ├── index.html       # Main website structure
-├── style.css        # Responsive design and themes
-├── data.js          # DSA topics, practice links, badges and challenges
-├── app.js           # Website logic and LocalStorage functionality
-├── robots.txt       # Search engine crawler rules
+├── style.css        # Responsive UI, light/dark themes and animations
+├── data.js          # DSA topics, practice links, badges and daily challenges
+├── app.js           # Website logic, progress tracking, notes and LocalStorage
+├── robots.txt       # Search-engine crawler rules
 ├── sitemap.xml      # Sitemap for Google indexing
 ├── render.yaml      # Render static website configuration
 └── README.md        # Project documentation
@@ -76,108 +80,165 @@ dsa-roadmap-tracker/
 
 ## 🚀 Run Locally
 
-1. Download or clone this repository.
+### 1. Clone the repository
 
 ```bash
-git clone [https://github.com/YOUR_GITHUB_USERNAME/dsa-roadmap-tracker.git](https://github.com/YOUR_GITHUB_USERNAME/dsa-roadmap-tracker.git)
+git clone [https://github.com/yawar2756/dsa-roadmap-tracker.git](https://github.com/yawar2756/dsa-roadmap-tracker.git)
 ```
 
-2. Open the project folder.
+### 2. Enter the project folder
 
 ```bash
 cd dsa-roadmap-tracker
 ```
 
-3. Open `index.html` in your browser.
+### 3. Run the website
 
-For the best development experience, use VS Code with the **Live Server** extension:
+Open:
+
+```text
+index.html
+```
+
+in your browser.
+
+### Recommended: Use VS Code Live Server
 
 1. Open the project folder in VS Code.
-2. Right-click `index.html`.
-3. Click **Open with Live Server**.
+2. Install the **Live Server** extension.
+3. Right-click `index.html`.
+4. Click **Open with Live Server**.
+
+The website will normally open at:
+
+```text
+http://127.0.0.1:5500/
+```
 
 ## ☁️ Deploy on Render
 
-1. Push the project to GitHub.
-2. Sign in to [Render](https://render.com/) using GitHub.
-3. Click **New + → Static Site**.
-4. Select this repository.
-5. Configure:
+1. Push your project to GitHub.
+2. Sign in to [Render](https://render.com/) using your GitHub account.
+3. Click:
+
+```text
+New + → Static Site
+```
+
+4. Select this repository:
+
+```text
+yawar2756/dsa-roadmap-tracker
+```
+
+5. Use these settings:
 
 ```text
 Build Command: Leave empty
 Publish Directory: .
 ```
 
-6. Click **Create Static Site**.
-
-Render deploys the website and provides a free URL:
+6. Click:
 
 ```text
-[https://your-project-name.onrender.com](https://your-project-name.onrender.com)
+Create Static Site
 ```
+
+Render automatically deploys every future GitHub push from the `main` branch.
 
 ## 💾 Progress Storage
 
-This website stores learning progress, notes, streaks and goals in browser LocalStorage.
+This project uses browser LocalStorage.
 
-Your data stays on your current browser/device.
+It saves:
+
+- Completed DSA checkpoints
+- Completed practice problems
+- Personal notes
+- Daily challenge completion
+- Day streak
+- Weekly goals
+- Achievement badge progress
+- Theme preference
+
+Your progress stays in the browser/device you use.
 
 Use:
 
 ```text
-Backup
+⬇ Backup
 ```
 
-to download your progress as a `.json` file.
+to download your progress as a JSON file.
 
 Use:
 
 ```text
-Restore
+⬆ Restore
 ```
 
-to import progress on another browser or device.
+to import your progress on another device or browser.
 
 ## 🔍 SEO Setup
 
-The project includes:
+This project includes:
 
 ```text
 robots.txt
 sitemap.xml
-SEO meta tags
+SEO title and description
 Open Graph tags
 Schema.org structured data
 Google Search Console verification support
 ```
 
-After deployment:
+### Google Search Console steps
 
-1. Add your website to Google Search Console.
-2. Verify ownership.
-3. Submit:
+1. Deploy the website on Render.
+2. Open [Google Search Console](https://search.google.com/search-console/).
+3. Add your Render website URL.
+4. Verify ownership using the HTML meta tag.
+5. Submit:
 
 ```text
 sitemap.xml
 ```
 
-4. Request indexing for the homepage.
+6. Use URL Inspection.
+7. Click:
 
-## 🎯 Future Improvements
+```text
+Test Live URL → Request Indexing
+```
 
-- User accounts and cloud-synced progress
-- Firebase or Supabase database
+## 🎯 Version 2 Features
+
+- Daily DSA coding challenge
+- Weekly checkpoint goal
+- Personal notes per topic
+- Direct LeetCode and practice links
+- Badge and achievement system
+- Next learning topic recommendation
+- Progress analytics
+- Day streak system
+- Mobile-friendly dashboard
+- Backup and restore learning data
+
+## 🚧 Future Improvements
+
+- Firebase or Supabase login
+- Cloud-synced progress between devices
 - AI DSA tutor
-- Coding quiz system
-- Topic-specific learning pages
-- DSA visualizers
+- DSA quizzes
+- Algorithm visualizers
+- Topic-specific explanation pages
+- Completion certificates
+- Public learner profiles
 - Community leaderboard
-- User profile and certificates
-- Admin dashboard for questions and content
+- Admin panel for adding questions
 
 ## 📄 License
 
 This project is created for educational and portfolio purposes.
 
-Feel free to fork, customise and use it for learning.
+You may fork, modify and use this project for learning.
