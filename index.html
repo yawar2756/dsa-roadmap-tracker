@@ -1,28 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta name="google-site-verification" content="hb_Tm8kqIXezu-En_XTMMO_Tp1iF0KfYlJ1Wjd_Pl7g" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Free DSA Roadmap Tracker 2026 | Learn Data Structures & Algorithms</title>
-
-  <meta name="description" content="A free interactive DSA roadmap tracker for beginners. Learn data structures and algorithms step by step, from arrays and linked lists to trees, graphs, recursion and dynamic programming.">
-
-  <meta name="keywords" content="DSA roadmap, data structures roadmap, algorithms roadmap, DSA roadmap for beginners, learn data structures and algorithms, DSA tracker, data structures and algorithms roadmap">
-
-  <meta name="author" content="Your Name">
-
+  <!-- Primary SEO -->
+  <title>Free DSA Roadmap Tracker | Learn Data Structures & Algorithms Step by Step</title>
+  <meta name="description" content="Free interactive DSA roadmap tracker for beginners. Learn data structures and algorithms step by step: arrays, linked lists, stacks, queues, recursion, trees, graphs, sorting, greedy algorithms and dynamic programming.">
+  <meta name="keywords" content="DSA roadmap, data structures roadmap, algorithms roadmap, DSA roadmap for beginners, learn data structures and algorithms, free DSA tracker, DSA study plan, data structures and algorithms checklist">
+  <meta name="author" content="Yawar">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dsa-roadmap-tracker.onrender.com/">
 
-  <link rel="canonical" href="https://YOUR-RENDER-SITE.onrender.com/">
-
-  <meta property="og:title" content="Free DSA Roadmap Tracker — Learn DSA Step by Step">
-  <meta property="og:description" content="Track your journey from arrays to dynamic programming with an interactive DSA roadmap.">
+  <!-- Open Graph: preview shown when the link is shared -->
   <meta property="og:type" content="website">
+  <meta property="og:title" content="Free DSA Roadmap Tracker — Learn DSA Step by Step">
+  <meta property="og:description" content="An interactive Data Structures and Algorithms roadmap with study checkpoints, practice problems and progress tracking.">
   <meta property="og:url" content="https://dsa-roadmap-tracker.onrender.com/">
+  <meta property="og:site_name" content="DSA Roadmap Tracker">
+
+  <!-- Twitter / X link preview -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Free DSA Roadmap Tracker">
+  <meta name="twitter:description" content="Learn DSA step by step and track your progress from arrays to dynamic programming.">
+
+  <!-- Google Search Console verification: KEEP your existing verification tag below -->
+  <!-- Example: <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE"> -->
+
+  <!-- Structured data for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "DSA Roadmap Tracker",
+    "url": "https://dsa-roadmap-tracker.onrender.com/",
+    "description": "A free interactive roadmap to learn Data Structures and Algorithms step by step, from Big-O notation and arrays to graphs and dynamic programming.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    }
+  }
+  </script>
 
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 </head>
 <body>
 
@@ -33,8 +58,9 @@
         <span class="bolt">⚡</span> DSA Roadmap <span class="bolt">A → Z</span>
         <small>Click any topic to see exactly what to learn inside</small>
       </div>
+
       <div class="header-buttons">
-        <button id="themeBtn" title="Toggle light / dark mode">🌗</button>
+        <button id="themeBtn" title="Toggle light / dark mode" aria-label="Toggle light and dark mode">🌗</button>
         <button id="exportBtn" title="Download your progress as a backup file">⬇ Backup</button>
         <button id="importBtn" title="Restore progress from a backup file">⬆ Restore</button>
         <button id="resetBtn" title="Reset all progress">↺ Reset</button>
@@ -72,9 +98,10 @@
     <div class="controls">
       <div class="search-box">
         <span>🔍</span>
-        <input type="text" id="searchInput" placeholder="Search topics, e.g. 'sliding window', 'dijkstra', 'recursion'...">
-        <button id="clearSearch" hidden>✕</button>
+        <input type="text" id="searchInput" placeholder="Search topics: sliding window, Dijkstra, recursion..." aria-label="Search DSA roadmap topics">
+        <button id="clearSearch" hidden aria-label="Clear search">✕</button>
       </div>
+
       <div class="filter-chips" id="filterChips">
         <button class="chip active" data-filter="all">All</button>
         <button class="chip" data-filter="todo">Not started</button>
@@ -85,7 +112,48 @@
   </div>
 </header>
 
-<main id="roadmap"></main>
+<main>
+  <section class="intro-content" aria-labelledby="page-heading">
+    <h1 id="page-heading">Free DSA Roadmap for Beginners</h1>
+    <p>
+      Follow this interactive Data Structures and Algorithms roadmap to learn DSA step by step.
+      Start with time complexity, arrays and strings, then move through linked lists, stacks,
+      queues, recursion, trees, graphs, sorting, greedy algorithms and dynamic programming.
+    </p>
+  </section>
+
+  <!-- JavaScript renders the interactive roadmap cards here -->
+  <section id="roadmap" aria-label="Interactive DSA roadmap"></section>
+
+  <section class="seo-content" aria-labelledby="how-to-use-heading">
+    <h2 id="how-to-use-heading">How to Use This DSA Roadmap</h2>
+    <p>
+      Select any topic card to see its learning checklist, practice problems and study tips.
+      Mark each checkpoint when you complete it. Your progress saves automatically in your browser,
+      and you can use the Backup and Restore buttons to move your progress to another device.
+    </p>
+
+    <h2>DSA Topics Covered</h2>
+    <ul>
+      <li>Big-O notation, time complexity and space complexity</li>
+      <li>Arrays, strings, two pointers, sliding window and prefix sums</li>
+      <li>Hash tables, linked lists, stacks, queues and deques</li>
+      <li>Recursion, divide and conquer, and backtracking</li>
+      <li>Binary trees, binary search trees, heaps and tries</li>
+      <li>Graphs, BFS, DFS, Dijkstra, topological sort and Union-Find</li>
+      <li>Sorting algorithms, binary search and greedy algorithms</li>
+      <li>Dynamic programming from beginner to advanced level</li>
+    </ul>
+
+    <h2>14-Week DSA Learning Plan</h2>
+    <p>
+      Complete the foundations during Week 1, linear data structures in Weeks 2–3,
+      recursion and backtracking in Weeks 4–5, trees in Weeks 6–8, graphs and sorting
+      in Weeks 9–11, and dynamic programming in Weeks 12–14. Use the final advanced
+      section for interview preparation, competitive programming and revision.
+    </p>
+  </section>
+</main>
 
 <div class="streak-note">
   ✅ Progress saves automatically in your browser — <b>bookmark this page</b> and come back daily.
@@ -96,9 +164,8 @@
   <button class="link-btn" onclick="window.print()">🖨 Print / Save as PDF</button>
 </footer>
 
-<button id="scrollTop" title="Back to top" hidden>↑</button>
+<button id="scrollTop" title="Back to top" aria-label="Back to top" hidden>↑</button>
 
-<!-- MODAL -->
 <div class="overlay" id="overlay">
   <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
 </div>
