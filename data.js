@@ -1,8 +1,3 @@
-// ============================================================
-// DSA ROADMAP DATA
-// Edit this file to add, remove, or reorder roadmap topics.
-// ============================================================
-
 const ROADMAP_DATA = [
   {
     phase: "Phase 1",
@@ -14,45 +9,73 @@ const ROADMAP_DATA = [
         icon: "⏱️",
         name: "Big-O Notation",
         time: "2–3 days",
-        why: "Big-O is the language used to compare every data structure and algorithm. Learn it first because you cannot judge whether your solution is efficient without understanding its time and space complexity.",
+        why: "Big-O helps you measure how efficient an algorithm is. Learn it first so you can compare solutions properly.",
         learn: [
-          ["What time complexity means", "Count operations instead of measuring seconds."],
-          ["O(1), O(log n), O(n), O(n log n), O(n²), O(2ⁿ)", "Know the growth order from fastest to slowest."],
-          ["Space complexity", "Understand the extra memory an algorithm uses."],
-          ["Best, worst and average case", "For example: quicksort can be O(n²) in the worst case and O(n log n) on average."],
-          ["Analysing loops and nested loops", "A loop inside a loop commonly leads to O(n²)."],
-          ["Analysing recursive calls", "Use a recursion tree to count branches and depth."]
+          ["What time complexity means", "Count operations instead of seconds."],
+          ["Common complexities", "O(1), O(log n), O(n), O(n log n), O(n²), O(2ⁿ)."],
+          ["Space complexity", "Understand extra memory used by an algorithm."],
+          ["Best, worst and average case", "Know how algorithm performance can change."],
+          ["Loop complexity", "Analyse single loops and nested loops."],
+          ["Recursion complexity", "Use recursion trees to estimate calls."]
         ],
         practice: [
-          ["Analyse complexity of 10 short code snippets", "Easy"]
+          {
+            name: "Analyse complexity of 10 code snippets",
+            difficulty: "Easy",
+            url: "https://www.geeksforgeeks.org/dsa/analysis-algorithms-big-o-analysis/"
+          }
         ],
-        tip: "Do not spend too long on formal proofs. You should be able to read code and identify whether it is O(n), O(n²), or O(log n)."
+        tip: "You do not need formal proofs initially. Be able to identify O(n), O(n²), and O(log n) from code."
       },
       {
         id: "arrays",
         icon: "📦",
         name: "Arrays & Strings",
         time: "3–4 days",
-        why: "Arrays and strings are the foundation of DSA. Most beginner and interview questions begin with these structures and their common patterns.",
+        why: "Arrays and strings are the base of DSA. Most beginner and interview questions start with these patterns.",
         learn: [
-          ["Array indexing, insertion and deletion", "Understand the O(1) access cost and O(n) insertion or deletion cost."],
-          ["Dynamic arrays", "Learn how Python lists, Java ArrayLists, and C++ vectors resize."],
-          ["2D arrays and matrices", "Practice row-wise, column-wise, diagonal traversal, and transpose."],
-          ["String immutability and slicing", "Understand how strings behave in your programming language."],
-          ["Two pointers technique", "Use left/right pointers for pairs, palindromes, and container problems."],
-          ["Sliding window technique", "Use fixed or variable windows for substring and subarray problems."],
-          ["Prefix sums", "Answer range sum queries quickly after preprocessing."],
-          ["Kadane's algorithm", "Find the maximum subarray sum in O(n)."]
+          ["Array indexing, insertion and deletion", "Understand O(1) access and O(n) insertion or deletion."],
+          ["Dynamic arrays", "Learn Python lists, C++ vectors, or Java ArrayLists."],
+          ["2D arrays and matrices", "Practice rows, columns, diagonals and transpose."],
+          ["String operations", "Slicing, immutability and character counting."],
+          ["Two pointers", "Use left/right pointers for pair sums and palindromes."],
+          ["Sliding window", "Use fixed and variable windows for subarray/substring problems."],
+          ["Prefix sums", "Answer range-sum queries quickly."],
+          ["Kadane's algorithm", "Find maximum subarray sum in O(n)."]
         ],
         practice: [
-          ["Two Sum", "Easy"],
-          ["Best Time to Buy and Sell Stock", "Easy"],
-          ["Contains Duplicate", "Easy"],
-          ["Longest Substring Without Repeating Characters", "Medium"],
-          ["Maximum Subarray - Kadane's Algorithm", "Medium"],
-          ["Product of Array Except Self", "Medium"]
+          {
+            name: "Two Sum",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/two-sum/"
+          },
+          {
+            name: "Best Time to Buy and Sell Stock",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
+          },
+          {
+            name: "Contains Duplicate",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/contains-duplicate/"
+          },
+          {
+            name: "Longest Substring Without Repeating Characters",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+          },
+          {
+            name: "Maximum Subarray",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/maximum-subarray/"
+          },
+          {
+            name: "Product of Array Except Self",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/product-of-array-except-self/"
+          }
         ],
-        tip: "Learn sliding window deeply. It is one of the most useful DSA patterns for arrays and strings."
+        tip: "Master sliding window and two pointers. They appear in many interview problems."
       }
     ]
   },
@@ -67,91 +90,164 @@ const ROADMAP_DATA = [
         icon: "🗂️",
         name: "Hash Tables",
         time: "2–3 days",
-        why: "Hash tables give O(1) average lookup and are one of the highest-value topics in DSA. They are ideal for counting, duplicates, grouping, and fast membership checking.",
+        why: "Hash maps and sets provide fast average O(1) lookup. Use them for frequency counts, duplicate checks and grouping.",
         learn: [
-          ["Hash function basics", "Understand how a key becomes an array index."],
-          ["Handling collisions", "Learn chaining and open addressing concepts."],
-          ["Hash map versus hash set", "Maps store key-value pairs; sets store unique values."],
-          ["Load factor and resizing", "Understand why average lookup is O(1)."],
-          ["Frequency counting pattern", "Count characters, numbers, and occurrences efficiently."],
-          ["Grouping with maps", "Group values by a computed key, such as anagrams."]
+          ["Hash function basics", "Learn how keys become indexes."],
+          ["Collision handling", "Understand chaining and open addressing."],
+          ["Hash map vs hash set", "Map: key-value. Set: unique values."],
+          ["Load factor and resizing", "Understand average O(1) lookup."],
+          ["Frequency counting", "Count characters or numbers efficiently."],
+          ["Grouping with maps", "Group anagrams and similar values."]
         ],
         practice: [
-          ["Valid Anagram", "Easy"],
-          ["Group Anagrams", "Medium"],
-          ["Top K Frequent Elements", "Medium"],
-          ["Longest Consecutive Sequence", "Medium"]
+          {
+            name: "Valid Anagram",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/valid-anagram/"
+          },
+          {
+            name: "Group Anagrams",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/group-anagrams/"
+          },
+          {
+            name: "Top K Frequent Elements",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/top-k-frequent-elements/"
+          },
+          {
+            name: "Longest Consecutive Sequence",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/longest-consecutive-sequence/"
+          }
         ],
-        tip: "If a question says duplicates, frequency, count, membership, or lookup, consider using a hash map or hash set."
+        tip: "If a question involves duplicates, counts, frequencies or fast lookup, think hash map or hash set."
       },
       {
         id: "linkedlist",
         icon: "🔗",
         name: "Linked Lists",
         time: "3–4 days",
-        why: "Linked lists teach pointer manipulation. They are important for university exams and interviews because they test whether you can safely change references between nodes.",
+        why: "Linked lists teach pointer manipulation and are important for exams and interviews.",
         learn: [
-          ["Singly linked list from scratch", "Create Node, insert, delete, search, and display methods."],
-          ["Doubly and circular linked lists", "Understand trade-offs compared with singly linked lists."],
-          ["Reversing a linked list", "Learn both iterative and recursive reversal."],
-          ["Fast and slow pointers", "Use Floyd's algorithm for cycle detection and middle-node problems."],
-          ["Merging two sorted lists", "A key pattern used again in merge sort."],
-          ["Find the k-th node from the end", "Use two pointers separated by k nodes."],
-          ["Array versus linked list", "Know when one structure is better than the other."]
+          ["Singly linked list", "Create Node, insert, delete, search and display methods."],
+          ["Doubly linked list", "Understand previous and next node pointers."],
+          ["Circular linked list", "Learn how the last node connects to the first."],
+          ["Reverse linked list", "Practice iterative and recursive reversal."],
+          ["Fast and slow pointers", "Use for cycle detection and middle node problems."],
+          ["Merge sorted lists", "Important pattern for merge sort."],
+          ["Kth node from end", "Use two pointers with a fixed gap."]
         ],
         practice: [
-          ["Reverse Linked List", "Easy"],
-          ["Merge Two Sorted Lists", "Easy"],
-          ["Linked List Cycle", "Easy"],
-          ["Middle of the Linked List", "Easy"],
-          ["Remove Nth Node From End of List", "Medium"],
-          ["Reorder List", "Medium"]
+          {
+            name: "Reverse Linked List",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/reverse-linked-list/"
+          },
+          {
+            name: "Merge Two Sorted Lists",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/merge-two-sorted-lists/"
+          },
+          {
+            name: "Linked List Cycle",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/linked-list-cycle/"
+          },
+          {
+            name: "Middle of the Linked List",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/middle-of-the-linked-list/"
+          },
+          {
+            name: "Remove Nth Node From End of List",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/remove-nth-node-from-end-of-list/"
+          },
+          {
+            name: "Reorder List",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/reorder-list/"
+          }
         ],
-        tip: "Draw every node and arrow on paper before writing pointer-changing code."
+        tip: "Draw nodes and arrows before writing pointer-changing code."
       },
       {
         id: "stack",
         icon: "🥞",
         name: "Stacks",
         time: "1–2 days",
-        why: "Stacks use LIFO order and are used in recursion, undo actions, expression evaluation, parsing, and balanced-bracket checking.",
+        why: "Stacks use LIFO order and are used in recursion, undo actions, parsing and expression evaluation.",
         learn: [
-          ["Stack operations and implementation", "Learn push, pop, peek, isEmpty using arrays and linked lists."],
-          ["Balanced parentheses matching", "The classic first stack problem."],
-          ["Infix to postfix and prefix conversion", "Useful for academic expression conversion problems."],
-          ["Postfix expression evaluation", "Evaluate expressions using a stack."],
-          ["Monotonic stack", "Use for next greater element and daily temperatures."],
-          ["Min stack", "Store extra state to return the minimum quickly."],
-          ["Call stack connection", "Understand how function calls connect to recursion."]
+          ["Stack operations", "Push, pop, peek and isEmpty."],
+          ["Stack implementation", "Build it using arrays and linked lists."],
+          ["Balanced parentheses", "Classic stack pattern."],
+          ["Infix to postfix and prefix", "Useful for academic expression conversion."],
+          ["Postfix evaluation", "Evaluate expressions using stack."],
+          ["Monotonic stack", "Next greater element and daily temperatures."],
+          ["Min stack", "Return minimum in O(1)."]
         ],
         practice: [
-          ["Valid Parentheses", "Easy"],
-          ["Implement Queue Using Stacks", "Easy"],
-          ["Min Stack", "Medium"],
-          ["Daily Temperatures", "Medium"],
-          ["Next Greater Element", "Medium"]
+          {
+            name: "Valid Parentheses",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/valid-parentheses/"
+          },
+          {
+            name: "Implement Queue Using Stacks",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/implement-queue-using-stacks/"
+          },
+          {
+            name: "Min Stack",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/min-stack/"
+          },
+          {
+            name: "Daily Temperatures",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/daily-temperatures/"
+          },
+          {
+            name: "Next Greater Element",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/next-greater-element-i/"
+          }
         ],
-        tip: "For monotonic stack questions, learn the next-greater-element pattern once and reuse it."
+        tip: "For monotonic stack problems, learn next greater element first."
       },
       {
         id: "queue",
         icon: "🚶",
         name: "Queues & Deques",
         time: "1–2 days",
-        why: "Queues use FIFO order and are essential for scheduling, buffering, breadth-first search, and level-order tree traversal.",
+        why: "Queues use FIFO order and are essential for BFS, scheduling and buffering.",
         learn: [
-          ["Queue operations and implementation", "Learn enqueue, dequeue, front, rear, and isEmpty."],
-          ["Circular queue", "Understand how freed spaces are reused."],
-          ["Deque", "A double-ended queue can insert and remove from both ends."],
-          ["Queue using two stacks", "Learn the amortised O(1) approach."],
-          ["Priority queue introduction", "This prepares you for heaps later."]
+          ["Queue operations", "Enqueue, dequeue, front, rear and isEmpty."],
+          ["Queue implementation", "Build with arrays and linked lists."],
+          ["Circular queue", "Reuse empty positions efficiently."],
+          ["Deque", "Insert and remove from both ends."],
+          ["Queue using stacks", "Learn amortised O(1) approach."],
+          ["Priority queue introduction", "Prepare for heaps."]
         ],
         practice: [
-          ["Number of Recent Calls", "Easy"],
-          ["Implement Circular Queue", "Medium"],
-          ["Design Deque", "Medium"]
+          {
+            name: "Number of Recent Calls",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/number-of-recent-calls/"
+          },
+          {
+            name: "Design Circular Queue",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/design-circular-queue/"
+          },
+          {
+            name: "Design Front Middle Back Queue",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/design-front-middle-back-queue/"
+          }
         ],
-        tip: "Queues are vital before graphs because BFS uses a queue."
+        tip: "BFS uses a queue, so learn this before starting graphs."
       }
     ]
   },
@@ -166,49 +262,89 @@ const ROADMAP_DATA = [
         icon: "🔄",
         name: "Recursion",
         time: "4–5 days",
-        why: "Recursion is a critical DSA checkpoint. Trees, divide and conquer, backtracking, graphs, and dynamic programming all depend on it.",
+        why: "Recursion is essential for trees, divide and conquer, backtracking, graphs and dynamic programming.",
         learn: [
-          ["Base case and recursive case", "Every recursive function needs a stopping condition."],
-          ["The call stack", "Visualise recursive function calls stacking and returning."],
-          ["Recursion tree", "Draw it to understand repeated subproblems and complexity."],
-          ["Recursion on arrays and strings", "Practice checking sorted arrays, subsets, and sums."],
-          ["Head and tail recursion", "Understand where the recursive call happens."],
-          ["Recursion versus iteration", "Learn how to convert between recursive and iterative solutions."],
-          ["Divide and conquer", "Break a problem into smaller halves, then combine results."],
-          ["Memoisation introduction", "Save repeated function calls as preparation for DP."]
+          ["Base case", "Every recursive function needs a stopping condition."],
+          ["Recursive case", "Solve a smaller version of the same problem."],
+          ["Call stack", "Understand function calls and return order."],
+          ["Recursion tree", "Draw calls to understand complexity."],
+          ["Recursion on arrays", "Practice sums, sorted checks and subsets."],
+          ["Head and tail recursion", "Learn call placement differences."],
+          ["Recursion vs iteration", "Convert between both forms."],
+          ["Memoisation introduction", "Save repeated calls for DP."]
         ],
         practice: [
-          ["Fibonacci - recursive then memoised", "Easy"],
-          ["Power of a Number - fast exponentiation", "Medium"],
-          ["Subsets of an Array", "Medium"],
-          ["Tower of Hanoi", "Medium"],
-          ["Generate All Permutations", "Medium"]
+          {
+            name: "Fibonacci Number",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/fibonacci-number/"
+          },
+          {
+            name: "Power of Two",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/power-of-two/"
+          },
+          {
+            name: "Subsets",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/subsets/"
+          },
+          {
+            name: "Permutations",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/permutations/"
+          },
+          {
+            name: "Pow(x, n)",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/powx-n/"
+          }
         ],
-        tip: "If you cannot draw the recursion tree, do not code yet. Draw the calls, base cases, and returns first."
+        tip: "Draw the recursion tree before coding. If you cannot draw it, do not code it yet."
       },
       {
         id: "backtrack",
         icon: "🧭",
         name: "Backtracking",
         time: "3–4 days",
-        why: "Backtracking is recursion with choices and undo operations. It is used for subsets, permutations, N-Queens, Sudoku, and path-search problems.",
+        why: "Backtracking is recursion plus undo. It is used for subsets, permutations, Sudoku and N-Queens.",
         learn: [
-          ["Choose, explore, un-choose", "The main backtracking template."],
-          ["Subsets and power set generation", "Include or exclude each element."],
-          ["Permutations", "Generate every possible ordering."],
-          ["Combination sum", "Build valid target combinations."],
-          ["N-Queens", "The classic backtracking constraint problem."],
-          ["Sudoku solver concept", "Apply backtracking in a grid."],
-          ["Pruning strategies", "Stop exploring invalid branches early."]
+          ["Choose, explore, un-choose", "The universal backtracking template."],
+          ["Subsets", "Include or exclude each element."],
+          ["Permutations", "Generate all possible orderings."],
+          ["Combination sum", "Build valid combinations."],
+          ["N-Queens", "Classic constraint backtracking."],
+          ["Sudoku solver", "Apply choices inside a grid."],
+          ["Pruning", "Stop invalid branches early."]
         ],
         practice: [
-          ["Subsets", "Medium"],
-          ["Permutations", "Medium"],
-          ["Combination Sum", "Medium"],
-          ["Word Search", "Medium"],
-          ["N-Queens", "Hard"]
+          {
+            name: "Subsets",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/subsets/"
+          },
+          {
+            name: "Permutations",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/permutations/"
+          },
+          {
+            name: "Combination Sum",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/combination-sum/"
+          },
+          {
+            name: "Word Search",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/word-search/"
+          },
+          {
+            name: "N-Queens",
+            difficulty: "Hard",
+            url: "https://leetcode.com/problems/n-queens/"
+          }
         ],
-        tip: "Remember the template: base case → choose → recurse → undo choice."
+        tip: "Follow this order: base case → choose → recurse → undo choice."
       }
     ]
   },
@@ -223,95 +359,162 @@ const ROADMAP_DATA = [
         icon: "🌳",
         name: "Binary Trees",
         time: "4–5 days",
-        why: "Binary trees are among the most frequently asked interview topics. They use recursion heavily and help you learn hierarchical data processing.",
+        why: "Binary trees are one of the most frequently asked DSA topics. They build your recursion and hierarchical problem-solving skills.",
         learn: [
-          ["Tree terminology", "Root, parent, child, leaf, height, depth, subtree, balanced tree."],
-          ["Tree traversals", "Preorder, inorder, postorder, and level-order traversal."],
-          ["Recursive and iterative traversals", "Use recursion and stack-based methods."],
-          ["Height, depth and diameter", "Use bottom-up recursive thinking."],
-          ["Balanced tree check", "Return height and validity together."],
-          ["Invert or mirror tree", "A simple but important recursive tree problem."],
-          ["Lowest Common Ancestor", "Solve LCA for normal binary trees and BSTs."],
-          ["Path sum problems", "Root-to-leaf paths, target sums, and maximum path sums."]
+          ["Tree terminology", "Root, leaf, parent, child, height, depth and subtree."],
+          ["Preorder traversal", "Root, left, right."],
+          ["Inorder traversal", "Left, root, right."],
+          ["Postorder traversal", "Left, right, root."],
+          ["Level-order traversal", "BFS using a queue."],
+          ["Height and depth", "Compute recursively."],
+          ["Diameter", "Find longest path between nodes."],
+          ["Lowest Common Ancestor", "Find common parent for two nodes."]
         ],
         practice: [
-          ["Invert Binary Tree", "Easy"],
-          ["Maximum Depth of Binary Tree", "Easy"],
-          ["Same Tree", "Easy"],
-          ["Binary Tree Level Order Traversal", "Medium"],
-          ["Validate Binary Search Tree", "Medium"],
-          ["Diameter of Binary Tree", "Medium"],
-          ["Lowest Common Ancestor", "Medium"],
-          ["Binary Tree Maximum Path Sum", "Hard"]
+          {
+            name: "Invert Binary Tree",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/invert-binary-tree/"
+          },
+          {
+            name: "Maximum Depth of Binary Tree",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
+          },
+          {
+            name: "Same Tree",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/same-tree/"
+          },
+          {
+            name: "Binary Tree Level Order Traversal",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/binary-tree-level-order-traversal/"
+          },
+          {
+            name: "Diameter of Binary Tree",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/diameter-of-binary-tree/"
+          },
+          {
+            name: "Lowest Common Ancestor",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
+          }
         ],
-        tip: "Most tree solutions are: solve left subtree, solve right subtree, then combine the results."
+        tip: "Most tree problems follow: solve left subtree, solve right subtree, combine results."
       },
       {
         id: "bst",
         icon: "🌲",
         name: "Binary Search Trees",
         time: "2–3 days",
-        why: "BSTs store ordered data and offer average O(log n) search, insertion, and deletion when balanced.",
+        why: "BSTs store sorted data and support average O(log n) search, insertion and deletion.",
         learn: [
-          ["BST property", "Every left subtree value is smaller and every right subtree value is larger."],
-          ["Search, insert and delete", "Practice all three operations."],
-          ["Delete cases", "Delete nodes with zero, one, and two children."],
-          ["Inorder traversal", "Inorder traversal of a BST returns sorted values."],
-          ["Build BST from sorted array", "Choose the middle item as the root."],
-          ["BST versus hash map", "Use BST when sorted order matters."],
-          ["Balanced BST concept", "Know why AVL and Red-Black trees avoid O(n) worst-case behavior."]
+          ["BST property", "Left subtree values are smaller; right subtree values are larger."],
+          ["Search", "Find a value efficiently."],
+          ["Insert", "Place a value in the correct position."],
+          ["Delete", "Handle nodes with zero, one and two children."],
+          ["Inorder traversal", "Returns values in sorted order."],
+          ["Build from sorted array", "Use middle value as root."],
+          ["Balanced BST concept", "Know why self-balancing trees matter."]
         ],
         practice: [
-          ["Search in a Binary Search Tree", "Easy"],
-          ["Insert into a Binary Search Tree", "Medium"],
-          ["Delete Node in a BST", "Medium"],
-          ["Kth Smallest Element in a BST", "Medium"]
+          {
+            name: "Search in a Binary Search Tree",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/search-in-a-binary-search-tree/"
+          },
+          {
+            name: "Insert into a Binary Search Tree",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/insert-into-a-binary-search-tree/"
+          },
+          {
+            name: "Delete Node in a BST",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/delete-node-in-a-bst/"
+          },
+          {
+            name: "Kth Smallest Element in a BST",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/kth-smallest-element-in-a-bst/"
+          }
         ],
-        tip: "For deleting a node with two children, replace it with the inorder successor: the smallest node in the right subtree."
+        tip: "For deletion with two children, replace the node using its inorder successor."
       },
       {
         id: "heap",
         icon: "⛰️",
         name: "Heaps & Priority Queues",
         time: "2 days",
-        why: "Heaps are powerful for Top-K questions, scheduling, streaming medians, and Dijkstra's shortest path algorithm.",
+        why: "Heaps are used for Top-K problems, scheduling, Dijkstra and streaming median problems.",
         learn: [
-          ["Min-heap and max-heap", "A heap is a complete binary tree usually stored in an array."],
-          ["Heap insertion and extraction", "Use sift-up and sift-down in O(log n)."],
-          ["Build heap from array", "Understand why heap construction can be O(n)."],
-          ["Array index formulas", "Parent: (i - 1) / 2; children: 2i + 1 and 2i + 2."],
-          ["Heap sort concept", "Sort using a heap in O(n log n)."],
-          ["Top-K pattern", "Maintain a heap of size k."],
-          ["Two heaps pattern", "Use a max-heap and min-heap to find streaming median."]
+          ["Min-heap and max-heap", "Learn heap ordering rules."],
+          ["Array representation", "Parent and child index formulas."],
+          ["Heap insertion", "Use sift-up."],
+          ["Heap extraction", "Use sift-down."],
+          ["Build heap", "Convert array into heap."],
+          ["Heap sort", "Sort using a heap."],
+          ["Top-K pattern", "Maintain heap of size k."],
+          ["Two heaps", "Find median in a stream."]
         ],
         practice: [
-          ["Kth Largest Element in an Array", "Medium"],
-          ["K Closest Points to Origin", "Medium"],
-          ["Top K Frequent Elements", "Medium"],
-          ["Find Median from Data Stream", "Hard"]
+          {
+            name: "Kth Largest Element in an Array",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/kth-largest-element-in-an-array/"
+          },
+          {
+            name: "K Closest Points to Origin",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/k-closest-points-to-origin/"
+          },
+          {
+            name: "Top K Frequent Elements",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/top-k-frequent-elements/"
+          },
+          {
+            name: "Find Median from Data Stream",
+            difficulty: "Hard",
+            url: "https://leetcode.com/problems/find-median-from-data-stream/"
+          }
         ],
-        tip: "For k largest elements, keep a min-heap of size k. The smallest among the top k stays at the root."
+        tip: "For k largest elements, use a min-heap of size k."
       },
       {
         id: "trie",
         icon: "🔤",
         name: "Tries (Prefix Trees)",
         time: "2 days",
-        why: "Tries are designed for prefix searching. They power autocomplete, dictionary, and word-search features.",
+        why: "Tries are useful for autocomplete, dictionaries, prefix searches and word-search problems.",
         learn: [
-          ["Trie node structure", "Each node stores children and an end-of-word flag."],
-          ["Insert", "Add a word character by character."],
-          ["Search", "Check whether a complete word exists."],
-          ["StartsWith", "Check whether a prefix exists."],
-          ["Autocomplete concept", "Find all words below a prefix node."],
-          ["Trie versus hash set", "Use tries when prefix queries matter."]
+          ["Trie node structure", "Children map plus end-of-word flag."],
+          ["Insert words", "Add one character at a time."],
+          ["Search words", "Check complete word existence."],
+          ["Prefix search", "Check if a prefix exists."],
+          ["Autocomplete concept", "Collect words below prefix node."],
+          ["Trie vs hash set", "Use trie when prefix matching matters."]
         ],
         practice: [
-          ["Implement Trie", "Medium"],
-          ["Design Add and Search Words Data Structure", "Medium"],
-          ["Word Search II", "Hard"]
+          {
+            name: "Implement Trie",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/implement-trie-prefix-tree/"
+          },
+          {
+            name: "Design Add and Search Words",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/design-add-and-search-words-data-structure/"
+          },
+          {
+            name: "Word Search II",
+            difficulty: "Hard",
+            url: "https://leetcode.com/problems/word-search-ii/"
+          }
         ],
-        tip: "A trie is simply a tree where each edge represents a character."
+        tip: "A trie is simply a tree where every edge represents a character."
       }
     ]
   },
@@ -326,94 +529,157 @@ const ROADMAP_DATA = [
         icon: "🕸️",
         name: "Graph Basics & Traversal",
         time: "4–5 days",
-        why: "Graphs model connections such as maps, networks, dependencies, and social relationships. BFS and DFS are essential graph traversal methods.",
+        why: "Graphs model networks, connections, maps and dependencies. BFS and DFS are essential graph algorithms.",
         learn: [
-          ["Graph representations", "Learn adjacency list, adjacency matrix, and edge list."],
-          ["Graph types", "Directed, undirected, weighted, unweighted, cyclic, and acyclic."],
-          ["Breadth-First Search", "Use a queue; it finds shortest paths in unweighted graphs."],
-          ["Depth-First Search", "Use recursion or an explicit stack."],
-          ["Connected components", "Run BFS or DFS from each unvisited node."],
-          ["Grids as graphs", "Treat each cell as a node with four possible directions."],
-          ["Number of islands pattern", "A classic grid DFS or BFS problem."],
-          ["Cycle detection", "Use visited states for directed graph cycles."]
+          ["Graph representations", "Adjacency list, matrix and edge list."],
+          ["Graph types", "Directed, undirected, weighted and unweighted."],
+          ["BFS", "Use queue for breadth-first traversal."],
+          ["DFS", "Use recursion or stack for depth-first traversal."],
+          ["Connected components", "Run DFS/BFS from each unvisited node."],
+          ["Grids as graphs", "Treat cells as nodes."],
+          ["Number of islands pattern", "Classic grid DFS/BFS."],
+          ["Cycle detection", "Use visited states."]
         ],
         practice: [
-          ["Flood Fill", "Easy"],
-          ["Number of Islands", "Medium"],
-          ["Max Area of Island", "Medium"],
-          ["Clone Graph", "Medium"],
-          ["Course Schedule", "Medium"]
+          {
+            name: "Flood Fill",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/flood-fill/"
+          },
+          {
+            name: "Number of Islands",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/number-of-islands/"
+          },
+          {
+            name: "Max Area of Island",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/max-area-of-island/"
+          },
+          {
+            name: "Clone Graph",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/clone-graph/"
+          },
+          {
+            name: "Course Schedule",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/course-schedule/"
+          }
         ],
-        tip: "Most grid questions are graph questions in disguise. Learn the four-direction loop well."
+        tip: "Most grid questions are graph questions in disguise."
       },
       {
         id: "graphadv",
         icon: "🛰️",
         name: "Advanced Graphs",
         time: "3–4 days",
-        why: "Advanced graph algorithms solve shortest paths, ordering dependencies, connectivity, and minimum-cost connection problems.",
+        why: "Advanced graph algorithms solve shortest path, dependency and connectivity problems.",
         learn: [
-          ["Topological sort", "Order tasks with dependencies using Kahn's algorithm or DFS."],
-          ["Dijkstra's algorithm", "Find shortest paths with non-negative edge weights."],
-          ["Union-Find or Disjoint Set Union", "Track connected components efficiently."],
-          ["Path compression and union by rank", "Optimise Union-Find operations."],
-          ["Cycle detection with Union-Find", "Useful for undirected graphs."],
-          ["Bellman-Ford concept", "Know it handles negative weights."],
-          ["Minimum Spanning Tree", "Understand Kruskal and Prim concepts."]
+          ["Topological sort", "Order tasks with dependencies."],
+          ["Kahn's algorithm", "BFS topological sorting using indegrees."],
+          ["Dijkstra's algorithm", "Shortest path with non-negative edges."],
+          ["Union-Find", "Track connected components."],
+          ["Path compression", "Optimise Union-Find."],
+          ["Union by rank", "Keep Union-Find trees balanced."],
+          ["Minimum spanning tree", "Understand Kruskal and Prim."]
         ],
         practice: [
-          ["Course Schedule II", "Medium"],
-          ["Network Delay Time", "Medium"],
-          ["Number of Provinces", "Medium"],
-          ["Redundant Connection", "Medium"]
+          {
+            name: "Course Schedule II",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/course-schedule-ii/"
+          },
+          {
+            name: "Network Delay Time",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/network-delay-time/"
+          },
+          {
+            name: "Number of Provinces",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/number-of-provinces/"
+          },
+          {
+            name: "Redundant Connection",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/redundant-connection/"
+          }
         ],
-        tip: "Master Union-Find once. It appears in many connection and grouping problems."
+        tip: "Master Union-Find once. It is useful in many grouping and connection problems."
       },
       {
         id: "sorting",
         icon: "📊",
         name: "Sorting Algorithms",
         time: "3–4 days",
-        why: "Sorting is fundamental for exams, interviews, and efficient algorithm design. Merge sort and quicksort also strengthen divide-and-conquer recursion.",
+        why: "Sorting is important for DSA exams and interviews. Merge sort and quicksort teach divide-and-conquer.",
         learn: [
-          ["Bubble, selection and insertion sort", "Understand the basic O(n²) sorting algorithms."],
-          ["Merge sort", "Divide, sort halves, and merge; always O(n log n)."],
-          ["Quicksort", "Partition around a pivot; O(n log n) average."],
-          ["Partition schemes", "Learn Lomuto and Hoare partition concepts."],
-          ["Heap sort", "Build a heap and extract values repeatedly."],
-          ["Counting and bucket sort", "Use when value ranges are limited."],
-          ["Stable sorting", "Know which algorithms preserve the order of equal values."],
-          ["Sorting complexity comparison", "Compare time, space, stability, and best/worst cases."]
+          ["Bubble sort", "Basic O(n²) sort."],
+          ["Selection sort", "Select minimum value each pass."],
+          ["Insertion sort", "Efficient for small or nearly sorted arrays."],
+          ["Merge sort", "Stable divide-and-conquer O(n log n) sorting."],
+          ["Quick sort", "Partition around a pivot."],
+          ["Partition methods", "Lomuto and Hoare partition concepts."],
+          ["Heap sort", "Sort using heap."],
+          ["Counting sort", "Use when range is limited."]
         ],
         practice: [
-          ["Implement Merge Sort", "Medium"],
-          ["Implement Quick Sort", "Medium"],
-          ["Sort Colors", "Medium"],
-          ["Kth Largest Element using Quickselect", "Medium"]
+          {
+            name: "Sort an Array",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/sort-an-array/"
+          },
+          {
+            name: "Sort Colors",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/sort-colors/"
+          },
+          {
+            name: "Kth Largest Element in an Array",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/kth-largest-element-in-an-array/"
+          }
         ],
-        tip: "Be able to write merge sort and quicksort from memory for university labs and interviews."
+        tip: "Learn merge sort and quicksort well enough to write them without copying."
       },
       {
         id: "binsearch",
         icon: "🎯",
         name: "Binary Search",
         time: "2 days",
-        why: "Binary search solves sorted or monotonic problems in O(log n). It is much more than just searching in a sorted array.",
+        why: "Binary search solves sorted and monotonic problems in O(log n).",
         learn: [
-          ["Classic binary search", "Use low, high, and mid safely."],
-          ["Boundary conditions", "Avoid off-by-one errors."],
+          ["Classic binary search", "Find value in sorted array."],
+          ["Boundary conditions", "Avoid off-by-one mistakes."],
           ["First and last occurrence", "Find lower and upper bounds."],
-          ["Rotated sorted array", "Identify the sorted half in each iteration."],
-          ["Binary search on the answer", "Use when the answer has a monotonic true/false condition."],
-          ["Binary search in 2D matrix", "Treat some matrices as a sorted 1D array."]
+          ["Rotated sorted array", "Identify sorted half."],
+          ["Binary search on answer", "Use for monotonic true/false conditions."],
+          ["2D matrix search", "Search sorted matrix efficiently."]
         ],
         practice: [
-          ["Binary Search", "Easy"],
-          ["First Bad Version", "Easy"],
-          ["Search in Rotated Sorted Array", "Medium"],
-          ["Koko Eating Bananas", "Medium"]
+          {
+            name: "Binary Search",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/binary-search/"
+          },
+          {
+            name: "First Bad Version",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/first-bad-version/"
+          },
+          {
+            name: "Search in Rotated Sorted Array",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/search-in-rotated-sorted-array/"
+          },
+          {
+            name: "Koko Eating Bananas",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/koko-eating-bananas/"
+          }
         ],
-        tip: "Memorise one clean binary-search template and carefully define what low, high, and mid represent."
+        tip: "Use one clean binary-search template consistently."
       }
     ]
   },
@@ -428,50 +694,89 @@ const ROADMAP_DATA = [
         icon: "🧩",
         name: "DP Fundamentals",
         time: "4–5 days",
-        why: "Dynamic programming solves problems with overlapping subproblems and optimal substructure. It is one of the most challenging but valuable DSA topics.",
+        why: "Dynamic programming solves overlapping subproblems efficiently using memoisation or tabulation.",
         learn: [
-          ["Overlapping subproblems", "Identify repeated recursive work."],
-          ["Optimal substructure", "A bigger answer can be built from smaller optimal answers."],
-          ["Top-down memoisation", "Use recursion plus a cache."],
-          ["Bottom-up tabulation", "Build answers iteratively in a table."],
-          ["State definition", "Define what dp[i] or dp[i][j] represents."],
-          ["Transition relation", "Determine how current state uses earlier states."],
-          ["Space optimisation", "Use rolling variables or arrays when possible."],
-          ["1D DP classics", "Practice climbing stairs, house robber, coin change."]
+          ["Overlapping subproblems", "Identify repeated work."],
+          ["Optimal substructure", "Build bigger solution from smaller optimal solutions."],
+          ["Top-down memoisation", "Recursion plus cache."],
+          ["Bottom-up tabulation", "Iterative DP table."],
+          ["State definition", "Define dp[i] clearly."],
+          ["Transition relation", "Find relationship with previous states."],
+          ["Space optimisation", "Reduce memory using rolling variables."],
+          ["1D DP patterns", "Climbing stairs, house robber and coin change."]
         ],
         practice: [
-          ["Climbing Stairs", "Easy"],
-          ["House Robber", "Medium"],
-          ["Coin Change", "Medium"],
-          ["Longest Increasing Subsequence", "Medium"],
-          ["Word Break", "Medium"]
+          {
+            name: "Climbing Stairs",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/climbing-stairs/"
+          },
+          {
+            name: "House Robber",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/house-robber/"
+          },
+          {
+            name: "Coin Change",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/coin-change/"
+          },
+          {
+            name: "Longest Increasing Subsequence",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/longest-increasing-subsequence/"
+          },
+          {
+            name: "Word Break",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/word-break/"
+          }
         ],
-        tip: "First write the recursive solution. Then memoise it. Finally convert it to bottom-up tabulation."
+        tip: "Solve recursively first, then add memoisation, then convert it to tabulation."
       },
       {
         id: "dp2",
         icon: "🧮",
         name: "2D & Advanced DP",
         time: "4–5 days",
-        why: "Two-dimensional DP is important for grids, strings, subsequences, and knapsack-style problems.",
+        why: "2D DP is used for grids, strings, knapsack and subsequence problems.",
         learn: [
-          ["Grid DP", "Solve unique paths and minimum path sum."],
-          ["0/1 Knapsack", "Each item can be used at most once."],
-          ["Unbounded Knapsack", "Items can be used multiple times."],
-          ["Longest Common Subsequence", "The foundation of many string DP problems."],
-          ["Edit Distance", "Find minimum insertions, deletions, and replacements."],
-          ["Palindrome DP", "Use DP for substrings and partitions."],
-          ["DP versus greedy", "Know when a local greedy choice is not enough."]
+          ["Grid DP", "Unique paths and minimum path sum."],
+          ["0/1 Knapsack", "Use each item at most once."],
+          ["Unbounded Knapsack", "Reuse items multiple times."],
+          ["Longest Common Subsequence", "Core string DP pattern."],
+          ["Edit Distance", "Minimum changes to convert one string into another."],
+          ["Palindrome DP", "Solve substring and partition questions."],
+          ["DP vs greedy", "Know when greedy is not enough."]
         ],
         practice: [
-          ["Unique Paths", "Medium"],
-          ["Minimum Path Sum", "Medium"],
-          ["Partition Equal Subset Sum", "Medium"],
-          ["Longest Common Subsequence", "Medium"],
-          ["Edit Distance", "Medium"],
-          ["Longest Palindromic Substring", "Medium"]
+          {
+            name: "Unique Paths",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/unique-paths/"
+          },
+          {
+            name: "Minimum Path Sum",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/minimum-path-sum/"
+          },
+          {
+            name: "Partition Equal Subset Sum",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/partition-equal-subset-sum/"
+          },
+          {
+            name: "Longest Common Subsequence",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/longest-common-subsequence/"
+          },
+          {
+            name: "Edit Distance",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/edit-distance/"
+          }
         ],
-        tip: "Learn 0/1 knapsack deeply. Many DP questions are variations of it."
+        tip: "Master 0/1 knapsack. Many DP problems are variations of it."
       }
     ]
   },
@@ -486,39 +791,59 @@ const ROADMAP_DATA = [
         icon: "🏆",
         name: "Advanced Structures",
         time: "1–2 weeks",
-        why: "These structures are useful for competitive programming, advanced coursework, and understanding how databases and search systems work.",
+        why: "Advanced structures improve your competitive programming and deeper computer-science understanding.",
         learn: [
-          ["Segment trees", "Answer range queries with updates in O(log n)."],
-          ["Fenwick tree or BIT", "Efficient prefix-sum updates and queries."],
-          ["Sparse table concept", "Fast immutable range queries."],
-          ["AVL and Red-Black tree concepts", "Understand self-balancing BSTs and rotations."],
-          ["B-Tree concept", "Understand how databases and file systems store indexed data."]
+          ["Segment tree", "Range queries with updates in O(log n)."],
+          ["Fenwick tree", "Efficient prefix sums with updates."],
+          ["Sparse table", "Fast immutable range queries."],
+          ["AVL tree concept", "Self-balancing BST."],
+          ["Red-Black tree concept", "Used in libraries and systems."],
+          ["B-Tree concept", "Used by databases and file systems."]
         ],
         practice: [
-          ["Range Sum Query - Mutable", "Medium"],
-          ["Implement Fenwick Tree", "Medium"]
+          {
+            name: "Range Sum Query - Mutable",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/range-sum-query-mutable/"
+          }
         ],
-        tip: "Advanced structures are optional for basic interviews but valuable for competitive programming and deeper computer-science knowledge."
+        tip: "Advanced structures are optional for basic interviews but excellent for competitive programming."
       },
       {
         id: "greedy",
         icon: "🤏",
         name: "Greedy Algorithms",
         time: "2–3 days",
-        why: "Greedy algorithms choose the best immediate option. The coding is often short, but proving that the choice is safe is the real challenge.",
+        why: "Greedy algorithms make locally best choices. The challenge is proving that the choice is safe.",
         learn: [
-          ["Greedy choice property", "Understand when local choices produce a global optimum."],
-          ["Interval scheduling", "Select maximum non-overlapping intervals by sorting end times."],
-          ["Jump game pattern", "Track farthest reachable position."],
-          ["Gas station pattern", "Use running fuel balance."],
-          ["Huffman coding concept", "Learn a greedy application in compression."],
-          ["Greedy versus DP", "Use DP when a greedy choice cannot be proven safe."]
+          ["Greedy choice property", "Know when local optimum gives global optimum."],
+          ["Interval scheduling", "Sort by end time."],
+          ["Jump game", "Track farthest reachable index."],
+          ["Gas station", "Use running fuel balance."],
+          ["Huffman coding", "Greedy application in compression."],
+          ["Greedy vs DP", "Use DP if greedy cannot be proven correct."]
         ],
         practice: [
-          ["Assign Cookies", "Easy"],
-          ["Jump Game", "Medium"],
-          ["Non-overlapping Intervals", "Medium"],
-          ["Gas Station", "Medium"]
+          {
+            name: "Assign Cookies",
+            difficulty: "Easy",
+            url: "https://leetcode.com/problems/assign-cookies/"
+          },
+          {
+            name: "Jump Game",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/jump-game/"
+          },
+          {
+            name: "Non-overlapping Intervals",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/non-overlapping-intervals/"
+          },
+          {
+            name: "Gas Station",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problems/gas-station/"
+          }
         ],
         tip: "For interval questions, try sorting by end time first."
       },
@@ -527,21 +852,170 @@ const ROADMAP_DATA = [
         icon: "🎯",
         name: "Interview & Exam Mode",
         time: "2–3 weeks",
-        why: "Knowing DSA concepts is not enough. You must practise identifying patterns and solving problems within time limits.",
+        why: "Knowledge becomes useful only when you can solve and explain problems under time pressure.",
         learn: [
-          ["Pattern recognition", "Name the likely pattern before writing code."],
-          ["Timed practice", "Target one easy problem in 15 minutes and one medium problem in 30 minutes."],
-          ["Complexity explanation", "Explain time and space complexity clearly."],
-          ["Revision of weak topics", "Re-solve problems you previously failed."],
-          ["Mock interviews", "Practise explaining your approach aloud."],
-          ["Paper coding", "Prepare for university practical exams without autocomplete."]
+          ["Pattern recognition", "Identify the probable pattern before coding."],
+          ["Timed practice", "Easy in 15 minutes, medium in 30 minutes."],
+          ["Complexity explanation", "Explain time and space complexity."],
+          ["Mock interviews", "Practise explaining your thinking aloud."],
+          ["Revision strategy", "Re-solve previous failed questions."],
+          ["Paper coding", "Prepare for college exams without autocomplete."]
         ],
         practice: [
-          ["Solve 50 mixed problems under time pressure", "Medium"],
-          ["Complete two mock interviews", "Hard"]
+          {
+            name: "Solve 50 mixed DSA problems",
+            difficulty: "Medium",
+            url: "https://leetcode.com/problemset/"
+          },
+          {
+            name: "Complete two mock interviews",
+            difficulty: "Hard",
+            url: "https://www.pramp.com/"
+          }
         ],
-        tip: "Re-solving old failed questions after a week teaches more than only solving new random problems."
+        tip: "Re-solving old failed questions after one week is more valuable than only solving new questions."
       }
     ]
+  }
+];
+
+const DAILY_CHALLENGES = [
+  {
+    topicId: "arrays",
+    title: "Two Sum",
+    difficulty: "Easy",
+    url: "https://leetcode.com/problems/two-sum/",
+    hint: "Use a hash map to store previously seen numbers."
+  },
+  {
+    topicId: "linkedlist",
+    title: "Reverse Linked List",
+    difficulty: "Easy",
+    url: "https://leetcode.com/problems/reverse-linked-list/",
+    hint: "Keep previous, current and next node references."
+  },
+  {
+    topicId: "stack",
+    title: "Valid Parentheses",
+    difficulty: "Easy",
+    url: "https://leetcode.com/problems/valid-parentheses/",
+    hint: "Push opening brackets and match closing brackets."
+  },
+  {
+    topicId: "recursion",
+    title: "Subsets",
+    difficulty: "Medium",
+    url: "https://leetcode.com/problems/subsets/",
+    hint: "For each number, choose include or exclude."
+  },
+  {
+    topicId: "bitree",
+    title: "Maximum Depth of Binary Tree",
+    difficulty: "Easy",
+    url: "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+    hint: "Depth is 1 plus the maximum depth of left and right children."
+  },
+  {
+    topicId: "graphbasics",
+    title: "Number of Islands",
+    difficulty: "Medium",
+    url: "https://leetcode.com/problems/number-of-islands/",
+    hint: "Use DFS or BFS to mark every connected land cell visited."
+  },
+  {
+    topicId: "binsearch",
+    title: "Search in Rotated Sorted Array",
+    difficulty: "Medium",
+    url: "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+    hint: "One half is always sorted; decide which half contains target."
+  },
+  {
+    topicId: "dp1",
+    title: "House Robber",
+    difficulty: "Medium",
+    url: "https://leetcode.com/problems/house-robber/",
+    hint: "At each house, choose rob or skip."
+  }
+];
+
+const BADGES = [
+  {
+    id: "first-step",
+    icon: "🌱",
+    name: "First Step",
+    description: "Complete your first checkpoint.",
+    condition: "checkpoint",
+    required: 1
+  },
+  {
+    id: "arrays-explorer",
+    icon: "📦",
+    name: "Arrays Explorer",
+    description: "Complete Arrays & Strings.",
+    condition: "topic",
+    topicId: "arrays"
+  },
+  {
+    id: "linear-learner",
+    icon: "🔗",
+    name: "Linear Learner",
+    description: "Complete Hash Tables, Linked Lists, Stacks and Queues.",
+    condition: "topics",
+    topicIds: ["hash", "linkedlist", "stack", "queue"]
+  },
+  {
+    id: "recursion-explorer",
+    icon: "🔄",
+    name: "Recursion Explorer",
+    description: "Complete Recursion.",
+    condition: "topic",
+    topicId: "recursion"
+  },
+  {
+    id: "tree-climber",
+    icon: "🌳",
+    name: "Tree Climber",
+    description: "Complete Binary Trees and BSTs.",
+    condition: "topics",
+    topicIds: ["bitree", "bst"]
+  },
+  {
+    id: "graph-navigator",
+    icon: "🕸️",
+    name: "Graph Navigator",
+    description: "Complete Graph Basics & Traversal.",
+    condition: "topic",
+    topicId: "graphbasics"
+  },
+  {
+    id: "dp-warrior",
+    icon: "🧩",
+    name: "DP Warrior",
+    description: "Complete both Dynamic Programming topics.",
+    condition: "topics",
+    topicIds: ["dp1", "dp2"]
+  },
+  {
+    id: "problem-solver",
+    icon: "💻",
+    name: "Problem Solver",
+    description: "Mark 10 practice problems as solved.",
+    condition: "problems",
+    required: 10
+  },
+  {
+    id: "consistent-learner",
+    icon: "🔥",
+    name: "Consistent Learner",
+    description: "Maintain a 7-day streak.",
+    condition: "streak",
+    required: 7
+  },
+  {
+    id: "roadmap-champion",
+    icon: "🏆",
+    name: "Roadmap Champion",
+    description: "Complete every DSA topic.",
+    condition: "all-topics"
   }
 ];
