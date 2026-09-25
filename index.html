@@ -4,37 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Primary SEO -->
-  <title>Free DSA Roadmap Tracker | Learn Data Structures & Algorithms Step by Step</title>
-  <meta name="description" content="Free interactive DSA roadmap tracker for beginners. Learn data structures and algorithms step by step: arrays, linked lists, stacks, queues, recursion, trees, graphs, sorting, greedy algorithms and dynamic programming.">
-  <meta name="keywords" content="DSA roadmap, data structures roadmap, algorithms roadmap, DSA roadmap for beginners, learn data structures and algorithms, free DSA tracker, DSA study plan, data structures and algorithms checklist">
+  <title>Free DSA Roadmap Tracker | Learn Data Structures & Algorithms</title>
+
+  <meta
+    name="description"
+    content="Free interactive DSA roadmap tracker for beginners. Learn arrays, linked lists, stacks, queues, recursion, trees, graphs, sorting and dynamic programming step by step."
+  >
+
+  <meta
+    name="keywords"
+    content="DSA roadmap, data structures roadmap, algorithms roadmap, DSA roadmap for beginners, DSA tracker, learn DSA"
+  >
+
   <meta name="author" content="Yawar">
   <meta name="robots" content="index, follow">
+
   <link rel="canonical" href="https://dsa-roadmap-tracker.onrender.com/">
 
-  <!-- Open Graph: preview shown when the link is shared -->
+  <!-- Keep your existing Google Search Console verification meta tag here -->
+  <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE"> -->
+
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Free DSA Roadmap Tracker — Learn DSA Step by Step">
-  <meta property="og:description" content="An interactive Data Structures and Algorithms roadmap with study checkpoints, practice problems and progress tracking.">
+  <meta property="og:title" content="Free DSA Roadmap Tracker">
+  <meta
+    property="og:description"
+    content="Learn Data Structures and Algorithms step by step with an interactive roadmap, daily challenge, notes, goals and badges."
+  >
   <meta property="og:url" content="https://dsa-roadmap-tracker.onrender.com/">
   <meta property="og:site_name" content="DSA Roadmap Tracker">
 
-  <!-- Twitter / X link preview -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Free DSA Roadmap Tracker">
-  <meta name="twitter:description" content="Learn DSA step by step and track your progress from arrays to dynamic programming.">
-
-  <!-- Google Search Console verification: KEEP your existing verification tag below -->
-  <meta name="google-site-verification" content="hb_Tm8kqIXezu-En_XTMMO_Tp1iF0KfYlJ1Wjd_Pl7g" />
-
-  <!-- Structured data for Google -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "DSA Roadmap Tracker",
     "url": "https://dsa-roadmap-tracker.onrender.com/",
-    "description": "A free interactive roadmap to learn Data Structures and Algorithms step by step, from Big-O notation and arrays to graphs and dynamic programming.",
+    "description": "A free interactive roadmap to learn Data Structures and Algorithms from Big-O notation to dynamic programming.",
     "applicationCategory": "EducationalApplication",
     "operatingSystem": "Any",
     "isAccessibleForFree": true,
@@ -47,130 +52,289 @@
   </script>
 
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"
+  >
 </head>
+
 <body>
+  <header>
+    <div class="header-inner">
+      <div class="top-row">
+        <div class="logo">
+          <span class="bolt">⚡</span>
+          DSA Roadmap
+          <span class="bolt">A → Z</span>
 
-<header>
-  <div class="header-inner">
-    <div class="top-row">
-      <div class="logo">
-        <span class="bolt">⚡</span> DSA Roadmap <span class="bolt">A → Z</span>
-        <small>Click any topic to see exactly what to learn inside</small>
+          <small>Learn · Track · Practise · Master</small>
+        </div>
+
+        <div class="header-buttons">
+          <button id="themeBtn" type="button" title="Toggle theme">🌗</button>
+          <button id="exportBtn" type="button">⬇ Backup</button>
+          <button id="importBtn" type="button">⬆ Restore</button>
+          <button id="resetBtn" type="button">↺ Reset</button>
+
+          <input id="importFile" type="file" accept=".json" hidden>
+        </div>
       </div>
 
-      <div class="header-buttons">
-        <button id="themeBtn" title="Toggle light / dark mode" aria-label="Toggle light and dark mode">🌗</button>
-        <button id="exportBtn" title="Download your progress as a backup file">⬇ Backup</button>
-        <button id="importBtn" title="Restore progress from a backup file">⬆ Restore</button>
-        <button id="resetBtn" title="Reset all progress">↺ Reset</button>
-        <input type="file" id="importFile" accept=".json" hidden>
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-value" id="statPct">0%</span>
+          <span class="stat-label">Overall</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-value" id="statTopics">0/0</span>
+          <span class="stat-label">Topics Done</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-value" id="statProblems">0</span>
+          <span class="stat-label">Problems Solved</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-value" id="statStreak">🔥 1</span>
+          <span class="stat-label">Day Streak</span>
+        </div>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span id="progressText">0 of 0 checkpoints completed</span>
+          <span id="progressPct">0%</span>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
       </div>
     </div>
+  </header>
 
-    <div class="stats-row">
-      <div class="stat">
-        <span class="stat-value" id="statPct">0%</span>
-        <span class="stat-label">Overall</span>
-      </div>
-      <div class="stat">
-        <span class="stat-value" id="statTopics">0/0</span>
-        <span class="stat-label">Topics done</span>
-      </div>
-      <div class="stat">
-        <span class="stat-value" id="statSubs">0/0</span>
-        <span class="stat-label">Checkpoints</span>
-      </div>
-      <div class="stat">
-        <span class="stat-value" id="statStreak">🔥 1</span>
-        <span class="stat-label">Day streak</span>
-      </div>
-    </div>
+  <main>
+    <section class="hero-section">
+      <div class="hero-content">
+        <span class="hero-label">FREE INTERACTIVE LEARNING PLATFORM</span>
 
-    <div class="progress-wrap">
-      <div class="progress-label">
-        <span id="progressText">0 of 0 checkpoints completed</span>
-        <span id="progressPct">0%</span>
-      </div>
-      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-    </div>
+        <h1>Master Data Structures & Algorithms</h1>
 
-    <div class="controls">
+        <p>
+          Follow a clear DSA roadmap from Big-O notation to Dynamic Programming.
+          Track progress, practise coding questions, save notes and earn badges.
+        </p>
+
+        <div class="hero-actions">
+          <button id="continueBtn" class="primary-btn" type="button">
+            ▶ Continue Learning
+          </button>
+
+          <a class="secondary-btn" href="#roadmap">
+            Explore Roadmap ↓
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <span class="hero-card-label">YOUR NEXT STEP</span>
+        <div id="nextTopicIcon" class="next-topic-icon">📦</div>
+        <h2 id="nextTopicName">Start Your DSA Journey</h2>
+        <p id="nextTopicTask">Complete your first checkpoint to begin.</p>
+
+        <button id="heroContinueBtn" class="small-primary-btn" type="button">
+          Start Now →
+        </button>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="dashboard-card daily-card">
+        <div class="dashboard-head">
+          <div>
+            <span class="dashboard-kicker">DAILY CHALLENGE</span>
+            <h2 id="dailyTitle">Loading challenge...</h2>
+          </div>
+
+          <span class="challenge-difficulty" id="dailyDifficulty">Easy</span>
+        </div>
+
+        <p id="dailyHint">Loading hint...</p>
+
+        <div class="dashboard-actions">
+          <a
+            id="dailyLink"
+            class="small-primary-btn"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Solve Challenge ↗
+          </a>
+
+          <button id="dailySolvedBtn" class="outline-btn" type="button">
+            Mark Solved ✓
+          </button>
+        </div>
+      </article>
+
+      <article class="dashboard-card weekly-card">
+        <div class="dashboard-head">
+          <div>
+            <span class="dashboard-kicker">WEEKLY GOAL</span>
+            <h2><span id="weeklyDone">0</span> / <span id="weeklyGoal">10</span> checkpoints</h2>
+          </div>
+
+          <button id="goalEditBtn" class="icon-btn" type="button" title="Edit weekly goal">
+            ⚙
+          </button>
+        </div>
+
+        <div class="mini-progress-track">
+          <div class="mini-progress-fill" id="weeklyFill"></div>
+        </div>
+
+        <p id="weeklyMessage">Complete 10 checkpoints this week.</p>
+      </article>
+
+      <article class="dashboard-card badge-card">
+        <div class="dashboard-head">
+          <div>
+            <span class="dashboard-kicker">ACHIEVEMENTS</span>
+            <h2><span id="badgeCount">0</span> / <span id="badgeTotal">0</span> unlocked</h2>
+          </div>
+
+          <button id="badgesBtn" class="outline-btn" type="button">
+            View Badges
+          </button>
+        </div>
+
+        <div id="miniBadges" class="mini-badges"></div>
+      </article>
+    </section>
+
+    <section class="roadmap-tools">
       <div class="search-box">
         <span>🔍</span>
-        <input type="text" id="searchInput" placeholder="Search topics: sliding window, Dijkstra, recursion..." aria-label="Search DSA roadmap topics">
-        <button id="clearSearch" hidden aria-label="Clear search">✕</button>
+
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search arrays, sliding window, recursion, graphs..."
+          aria-label="Search DSA roadmap topics"
+        >
+
+        <button id="clearSearch" type="button" hidden>✕</button>
       </div>
 
-      <div class="filter-chips" id="filterChips">
-        <button class="chip active" data-filter="all">All</button>
-        <button class="chip" data-filter="todo">Not started</button>
-        <button class="chip" data-filter="active">In progress</button>
-        <button class="chip" data-filter="done">Completed ✓</button>
+      <div class="filter-chips">
+        <button class="chip active" data-filter="all" type="button">All</button>
+        <button class="chip" data-filter="todo" type="button">Not Started</button>
+        <button class="chip" data-filter="active" type="button">In Progress</button>
+        <button class="chip" data-filter="done" type="button">Completed ✓</button>
+      </div>
+    </section>
+
+    <section class="roadmap-intro">
+      <h2>Your Complete DSA Roadmap</h2>
+
+      <p>
+        Open any topic to view learning checkpoints, practice questions,
+        personal notes and useful resources.
+      </p>
+    </section>
+
+    <section id="roadmap" aria-label="Interactive DSA roadmap"></section>
+
+    <section class="seo-content">
+      <h2>Free DSA Roadmap for Beginners</h2>
+
+      <p>
+        This free Data Structures and Algorithms roadmap helps beginners learn DSA
+        step by step. Begin with time complexity, arrays and strings, then progress
+        through linked lists, stacks, queues, recursion, trees, graphs, sorting,
+        greedy algorithms and dynamic programming.
+      </p>
+
+      <h2>How to Use This DSA Tracker</h2>
+
+      <p>
+        Select a topic, complete the learning checklist, solve the recommended
+        practice problems, add your notes and track your weekly goal. Your progress
+        is saved automatically in your browser.
+      </p>
+
+      <h2>Topics Included</h2>
+
+      <ul>
+        <li>Big-O notation and complexity analysis</li>
+        <li>Arrays, strings, two pointers and sliding window</li>
+        <li>Hash tables, linked lists, stacks and queues</li>
+        <li>Recursion, backtracking and divide and conquer</li>
+        <li>Binary trees, BSTs, heaps and tries</li>
+        <li>Graphs, BFS, DFS, Dijkstra and Union-Find</li>
+        <li>Sorting, binary search and greedy algorithms</li>
+        <li>Dynamic programming for beginner to advanced level</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    Built for DSA learners · Progress saves in your browser ·
+    <button id="printBtn" type="button">🖨 Print / Save PDF</button>
+  </footer>
+
+  <button id="scrollTop" type="button" title="Back to top" hidden>↑</button>
+
+  <!-- Topic details modal -->
+  <div class="overlay" id="topicOverlay">
+    <div class="modal topic-modal" id="topicModal"></div>
+  </div>
+
+  <!-- All badges modal -->
+  <div class="overlay" id="badgeOverlay">
+    <div class="modal badge-modal">
+      <div class="modal-head">
+        <div>
+          <span class="dashboard-kicker">YOUR PROGRESS</span>
+          <h2>Achievement Badges</h2>
+        </div>
+
+        <button class="close-btn" id="closeBadgesBtn" type="button">✕</button>
+      </div>
+
+      <div class="badge-modal-body" id="allBadges"></div>
+    </div>
+  </div>
+
+  <!-- Weekly goal modal -->
+  <div class="overlay" id="goalOverlay">
+    <div class="modal goal-modal">
+      <div class="modal-head">
+        <div>
+          <span class="dashboard-kicker">PERSONAL TARGET</span>
+          <h2>Set Weekly Goal</h2>
+        </div>
+
+        <button class="close-btn" id="closeGoalBtn" type="button">✕</button>
+      </div>
+
+      <div class="goal-body">
+        <label for="goalInput">How many checkpoints do you want to complete this week?</label>
+
+        <input id="goalInput" type="number" min="1" max="100" value="10">
+
+        <button id="saveGoalBtn" class="primary-btn" type="button">
+          Save Weekly Goal
+        </button>
       </div>
     </div>
   </div>
-</header>
 
-<main>
-  <section class="intro-content" aria-labelledby="page-heading">
-    <h1 id="page-heading">Free DSA Roadmap for Beginners</h1>
-    <p>
-      Follow this interactive Data Structures and Algorithms roadmap to learn DSA step by step.
-      Start with time complexity, arrays and strings, then move through linked lists, stacks,
-      queues, recursion, trees, graphs, sorting, greedy algorithms and dynamic programming.
-    </p>
-  </section>
-
-  <!-- JavaScript renders the interactive roadmap cards here -->
-  <section id="roadmap" aria-label="Interactive DSA roadmap"></section>
-
-  <section class="seo-content" aria-labelledby="how-to-use-heading">
-    <h2 id="how-to-use-heading">How to Use This DSA Roadmap</h2>
-    <p>
-      Select any topic card to see its learning checklist, practice problems and study tips.
-      Mark each checkpoint when you complete it. Your progress saves automatically in your browser,
-      and you can use the Backup and Restore buttons to move your progress to another device.
-    </p>
-
-    <h2>DSA Topics Covered</h2>
-    <ul>
-      <li>Big-O notation, time complexity and space complexity</li>
-      <li>Arrays, strings, two pointers, sliding window and prefix sums</li>
-      <li>Hash tables, linked lists, stacks, queues and deques</li>
-      <li>Recursion, divide and conquer, and backtracking</li>
-      <li>Binary trees, binary search trees, heaps and tries</li>
-      <li>Graphs, BFS, DFS, Dijkstra, topological sort and Union-Find</li>
-      <li>Sorting algorithms, binary search and greedy algorithms</li>
-      <li>Dynamic programming from beginner to advanced level</li>
-    </ul>
-
-    <h2>14-Week DSA Learning Plan</h2>
-    <p>
-      Complete the foundations during Week 1, linear data structures in Weeks 2–3,
-      recursion and backtracking in Weeks 4–5, trees in Weeks 6–8, graphs and sorting
-      in Weeks 9–11, and dynamic programming in Weeks 12–14. Use the final advanced
-      section for interview preparation, competitive programming and revision.
-    </p>
-  </section>
-</main>
-
-<div class="streak-note">
-  ✅ Progress saves automatically in your browser — <b>bookmark this page</b> and come back daily.
-</div>
-
-<footer>
-  Built for DSA learners · Progress is stored locally in your browser ·
-  <button class="link-btn" onclick="window.print()">🖨 Print / Save as PDF</button>
-</footer>
-
-<button id="scrollTop" title="Back to top" aria-label="Back to top" hidden>↑</button>
-
-<div class="overlay" id="overlay">
-  <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
-</div>
-
-<script src="data.js"></script>
-<script src="app.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
