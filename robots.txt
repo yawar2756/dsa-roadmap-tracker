@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dsa-roadmap-tracker.onrender.com/sitemap.xml
